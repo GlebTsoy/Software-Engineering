@@ -43,10 +43,10 @@
         <h3 class="text-muted">Payroll System</h3>
         <nav><!-- TemplateBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
-            <li class="active"><a href="#">Employee List</a></li>
-            <li><a href="#">Add New</a></li>
-            <li><a href="#">Changelog</a></li>
-            <li><a href="#">Help</a></li>
+            <li class="active"><a href="../Employee.html">Employee List</a></li>
+            <li><a href="../AddNew.html">Add New</a></li>
+            <li><a href="../Changelog.html">Changelog</a></li>
+            <li><a href="../Help.html">Help</a></li>
             </ul>
         <!-- TemplateEndEditable --></nav>
       </div>
