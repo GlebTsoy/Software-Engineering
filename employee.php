@@ -56,44 +56,41 @@
       <div class="jumbotron">
         <h1>Employee List </h1>
         <p class="lead">
-        
-<style>
-table, th, td{
-    border: 3px solid black;
-    border-collapse: collapse;
-	text-align:center
-}
-</style>
-<table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-	<th>Job</th>
-    <th>Salary</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-    <td>CEO</td>
-    <th>$90000</th>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-    <td>Janitor</td>
-  	<th>$400</th>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-    <td>President of fan club</td>
-   <th>$1000</th>
-  </tr>
-</table></p>
+			<style>
+				table {border-collapse: collapse; width: 100%;}
+				th, td {padding: 8px; text-align: left; border: 1px solid #ddd;}
+				tr:nth-child(even) {background-color: #f2f2f2;}
+				tr:hover{background-color:#ddd;}
+				th {background-color: #4CAF50; color: white;}
+			</style>
+			<?php
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$dbname = "employee";
+
+				$conn = new mysqli($servername, $username, $password, $dbname);
+
+				if ($conn->connect_error) {
+					 die("Connection failed: " . $conn->connect_error);
+				} 
+
+				$sql = "SELECT id, firstname, lastname, DOB FROM emp";
+				$result = $conn->query($sql);
+
+				if ($result->num_rows > 0) {
+					 echo "<table><tr><th>ID</th><th>First Name</th><th>Last name</th><th>DOB</th></tr>";
+					 while($row = $result->fetch_assoc()) {
+						 echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["DOB"]. "</td></tr>";
+					 }
+					 echo "</table>";
+				} else {
+					 echo "0 results";
+				}
+
+				$conn->close();
+			?>
+		</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Add some new dudes</a></p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Exterminate your workers</a></p>
       </div>
