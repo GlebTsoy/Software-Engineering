@@ -43,10 +43,9 @@
         <h3 class="text-muted">Payroll System</h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
-
-            <li ><a href="Employee.php">Employee List</a></li>
-            <li><a href="AddNew.html">Add New</a></li>
-            <li class="active"><a href="Changelog.html">Changelog</a></li>
+            <li><a href="Employee.php">Employee List</a></li>
+            <li class="active"><a href="AddNew.html">Add New</a></li>
+            <li><a href="Changelog.html">Changelog</a></li>
             <li><a href="Help.html">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
@@ -54,33 +53,40 @@
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Changelog</h1>
-       <style>
-	   table, th, td {
-    border: 1px solid black;
-	text-align:center;
-	}	   </style>
-        <p class="lead"><table style="width:100%">
-        
-  <tr>
-    <th>Date</th>
-    <th>Changes</th>
-  </tr>
-  <tr>
-    <td>10/10/2015</td>
-    <td>New Employee: Jackson</td> 
+        <h1>Add new employee!</h1>
+        <p class="lead">
+First name: <input type="text" name="FirstName" value=""><br>
+Last name: <input type="text" name="LastName" value=""><br>
+Age: <input type="text" name="Age" value=""><br>
+Job: <input type="text" name="Job" value=""><br>
+Salary: <input type="text" name="Salary" value=""><br>
+<table width="200" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
     </tr>
-  <tr>
-    <td>5/10/2015</td>
-    <td>Removed Employee: Jane</td> 
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
-    
-  <tr>
-    <td>24/9/2015</td>
-    <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
-</table></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Submit</a></p>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       <!-- Site footer -->
