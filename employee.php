@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
+    <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Employee table</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,25 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
-
+	<script src="__jquery.tablesorter/jquery-latest.js"></script>
+	<script src="__jquery.tablesorter/jquery.tablesorter.js"></script>
+	<script>
+	function showUser(){
+		
+		var id = document.getElementById("value").innerText;
+		
+		if (window.XMLHttpRequest) {
+			xmlhttp=new XMLHttpRequest();
+		}
+		xmlhttp.onreadystatechange=function() {
+			if (this.readyState==4 && this.status==200) {
+				document.getElementById("txtHint").innerHTML=this.responseText;
+			}
+		}
+		xmlhttp.open("GET","test.php?q="+id,true);
+		xmlhttp.send();
+	}
+	</script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -62,6 +80,9 @@
 				tr:nth-child(even) {background-color: #f2f2f2;}
 				tr:hover{background-color:#ddd;}
 				th {background-color: #4CAF50; color: white;}
+				th:hover{background-color: white; color: #4CAF50;}
+				td a{display: block; color: inherit; text-decoration: none;}
+				td a:hover{text-decoration: none;}
 			</style>
 			<?php
 				$servername = "localhost";
@@ -73,17 +94,19 @@
 
 				if ($conn->connect_error) {
 					 die("Connection failed: " . $conn->connect_error);
-				} 
+				}
 
 				$sql = "SELECT id, firstname, lastname, DOB, Job, Salary FROM emp";
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
-					 echo "<table><tr><th>ID</th><th>First Name</th><th>Last name</th><th>DOB</th><th>Job</th><th>Salary</th></tr>";
+					 echo "<table><thead><tr><th>ID</th><th>First Name</th><th>Last name</th><th>DOB</th><th>Job</th><th>Salary</th></tr></thead><tbody>";
 					 while($row = $result->fetch_assoc()) {
-						 echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Job"]."</td><td>" . $row["Salary"]."</td></tr>";
+						 echo "<tr><td id='value' onclick='showUser()'>" . $row["id"]. "</td><td><a href='test.php'>" . $row["firstname"]. "</a></td><td><a href='test.php'>" . 
+						 $row["lastname"]. "</a></td><td><a href='test.php'>" . $row["DOB"]. "</a></td><td><a href='test.php'>" . 
+						 $row["Job"]."</a></td><td><a href='test.php'>" . $row["Salary"]."</a></td></tr>";
 					 }
-					 echo "</table>";
+					 echo "</tbody></table>";
 				} else {
 					 echo "0 results";
 				}
@@ -91,6 +114,7 @@
 				$conn->close();
 			?>
 		</p>
+		<div id="txtHint"><b>Person info will be listed here.</b></div>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Add some new dudes</a></p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Exterminate your workers</a></p>
       </div>
@@ -102,7 +126,11 @@
 
     </div> <!-- /container -->
 
-
+	<script>
+		$(document).ready(function(){ 
+			$("table").tablesorter(); 
+		});
+	</script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
