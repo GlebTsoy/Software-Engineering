@@ -53,7 +53,7 @@
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Add new employee!</h1>
+        <h1>Remove employee!</h1>
         <p class="lead">
         <style>
 		td{ font-size:20px}
@@ -62,27 +62,11 @@
   <tbody>
     <tr>
     
-<form action="insert.php" method="post">
-      <td>First Name:</td>
-      <td><input type="text" name="FirstName" value=""></td>
+<form action="remove.php" method="post">
+      <td>Remove ID:</td>
+      <td><input type="text" name="IDRemove" value=""></td>
     </tr>
-    <tr>
-      <td>Last Name:</td>
-      <td><input type="text" name="LastName" value=""></td>
-    </tr>
-    <tr>
-      <td>Date of Birth:</td>
-      <td><input type="text" name="DOB" value=""></td>
-    </tr>
-    <tr>
-      <td>Job:</td>
-      <td><input type="text" name="Job" value=""></td>
-    </tr>
-    <tr>
-      <td>Salary:</td>
-      <td><input type="text" name="Salary" value=""></td>
-    </tr>
-  </tbody>
+    </tbody>
 </table>        <p><a class="btn btn-lg btn-success" href="#" role="button">Submit</a></p>
 
 </p>
