@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
+    <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
     <title>Justified Nav Template for Bootstrap</title>
     <!-- InstanceEndEditable -->
@@ -44,7 +44,7 @@
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
             <li><a href="Employee.php">Employee List</a></li>
-            <li class="active"><a href="AddNew.html">Add New</a></li>
+            <li class="active"><a href="AddNew.php">Add New</a></li>
             <li><a href="Changelog.html">Changelog</a></li>
             <li><a href="Help.html">Help</a></li>
             </ul>
@@ -83,7 +83,7 @@
       <td><input type="text" name="Salary" value=""></td>
     </tr>
   </tbody>
-</table>        <p><a class="btn btn-lg btn-success" href="#" role="button">Submit</a></p>
+</table>        <p><a class="btn btn-lg btn-success" href="RemoveEmp.php" role="button">Remove Employee</a></p>
 
 </p>
 

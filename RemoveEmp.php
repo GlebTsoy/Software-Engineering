@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
+    <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Remove Employee</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">

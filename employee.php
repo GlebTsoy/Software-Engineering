@@ -26,9 +26,7 @@
 	<script src="__jquery.tablesorter/jquery-latest.js"></script>
 	<script src="__jquery.tablesorter/jquery.tablesorter.js"></script>
 	<script>
-	function showUser(){
-		
-		var id = document.getElementById("value").innerText;
+	function showUser(id){
 		
 		if (window.XMLHttpRequest) {
 			xmlhttp=new XMLHttpRequest();
@@ -38,32 +36,22 @@
 				document.getElementById("txtHint").innerHTML=this.responseText;
 			}
 		}
-		xmlhttp.open("GET","test.php?q="+id,true);
+		xmlhttp.open("GET","details.php?q="+id,true);
 		xmlhttp.send();
 	}
 	</script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <!-- InstanceBeginEditable name="head" -->
-  <!-- InstanceEndEditable -->
   </head>
 
   <body>
 
     <div class="container">
-
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
         <h3 class="text-muted">Payroll System</h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
 
-            <li class="active"><a href="Employee.html">Employee List</a></li>
-            <li><a href="AddNew.html">Add New</a></li>
+            <li class="active"><a href="employee.php">Employee List</a></li>
+            <li><a href="AddNew.php">Add New</a></li>
             <li><a href="Changelog.html">Changelog</a></li>
             <li><a href="Help.html">Help</a></li>
             </ul>
@@ -83,6 +71,8 @@
 				th:hover{background-color: white; color: #4CAF50;}
 				td a{display: block; color: inherit; text-decoration: none;}
 				td a:hover{text-decoration: none;}
+				#id:hover{background-color:#4caf50; color:white}
+				#detailed{width:50%; position:relative; left:25%}
 			</style>
 			<?php
 				$servername = "localhost";
@@ -100,11 +90,13 @@
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
-					 echo "<table><thead><tr><th>ID</th><th>First Name</th><th>Last name</th><th>DOB</th><th>Job</th><th>Salary</th></tr></thead><tbody>";
+					 echo "<table><thead><tr><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th></tr></thead><tbody>";
 					 while($row = $result->fetch_assoc()) {
-						 echo "<tr><td id='value' onclick='showUser()'>" . $row["id"]. "</td><td><a href='test.php'>" . $row["firstname"]. "</a></td><td><a href='test.php'>" . 
-						 $row["lastname"]. "</a></td><td><a href='test.php'>" . $row["DOB"]. "</a></td><td><a href='test.php'>" . 
-						 $row["Job"]."</a></td><td><a href='test.php'>" . $row["Salary"]."</a></td></tr>";
+						 echo "<tr><td id='id' onclick='showUser(this.textContent)'>" . 
+						 $row["id"]. "</td><td>" . 
+						 $row["firstname"]. "</td><td>" . 
+						 $row["lastname"]. "</td><td>" . 
+						 $row["Job"]."</td></tr>";
 					 }
 					 echo "</tbody></table>";
 				} else {
@@ -114,9 +106,7 @@
 				$conn->close();
 			?>
 		</p>
-		<div id="txtHint"><b>Person info will be listed here.</b></div>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Add some new dudes</a></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Exterminate your workers</a></p>
+		<div id="txtHint"><b>Click on id to get more detailed information</b></div>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       <!-- Site footer -->
