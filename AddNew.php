@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ($_SESSION["valid"] == false){
+	header("Location: index.php");	
+}
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
@@ -45,8 +51,8 @@
           <ul class="nav nav-justified">
             <li><a href="Employee.php">Employee List</a></li>
             <li class="active"><a href="AddNew.php">Add New</a></li>
-            <li><a href="Changelog.html">Changelog</a></li>
-            <li><a href="Help.html">Help</a></li>
+            <li><a href="Changelog.php">Changelog</a></li>
+            <li><a href="Help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>

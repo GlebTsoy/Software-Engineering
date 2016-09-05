@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ($_SESSION["valid"] == false){
+	header("Location: index.php");	
+}
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
@@ -9,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Help</title>
+    <title>Changelog</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,20 +49,44 @@
         <h3 class="text-muted">Payroll System</h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
-            <li><a href="Employee.php">Employee List</a></li>
+
+            <li ><a href="Employee.php">Employee List</a></li>
             <li><a href="AddNew.php">Add New</a></li>
-            <li><a href="Changelog.html">Changelog</a></li>
-            <li class="active"><a href="Help.html">Help</a></li>
+            <li class="active"><a href="Changelog.php">Changelog</a></li>
+            <li><a href="Help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Help!</h1>
-        <p class="lead"> We offer free technical support to our customers and companies evaluating our products. 
-        Our technical support team is commited to providing superior support service, and is available Monday to Friday. <br><br> Contact us! </p>
-        <p>&nbsp; +62698671223242342343192381238</p>
+        <h1>Changelog</h1>
+       <style>
+	   table, th, td {
+    border: 1px solid black;
+	text-align:center;
+	}	   </style>
+        <p class="lead"><table style="width:100%">
+        
+  <tr>
+    <th>Date</th>
+    <th>Changes</th>
+  </tr>
+  <tr>
+    <td>10/10/2015</td>
+    <td>New Employee: Jackson</td> 
+    </tr>
+  <tr>
+    <td>5/10/2015</td>
+    <td>Removed Employee: Jane</td> 
+    </tr>
+    
+  <tr>
+    <td>24/9/2015</td>
+    <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
+    </tr>
+</table></p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       <!-- Site footer -->

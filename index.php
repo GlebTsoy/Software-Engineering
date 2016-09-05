@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION["valid"]=false;
+?>
 <!DOCTYPE html>
 <html>
 <head>

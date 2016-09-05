@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ($_SESSION["valid"] == false){
+	header("Location: index.php");	
+}
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
@@ -7,9 +13,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
+    <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Help</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -44,24 +50,19 @@
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
             <li><a href="Employee.php">Employee List</a></li>
-            <li class="active"><a href="AddNew.html">Add New</a></li>
-            <li><a href="Changelog.html">Changelog</a></li>
-            <li><a href="Help.html">Help</a></li>
+            <li><a href="AddNew.php">Add New</a></li>
+            <li><a href="Changelog.php">Changelog</a></li>
+            <li class="active"><a href="Help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Add new employee!</h1>
-        <p class="lead">
-First name: <input type="text" name="FirstName" value=""><br>
-Last name: <input type="text" name="LastName" value=""><br>
-Age: <input type="text" name="Age" value=""><br>
-Job: <input type="text" name="Job" value=""><br>
-Salary: <input type="text" name="Salary" value=""><br>
-</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Submit</a></p>
+        <h1>Help!</h1>
+        <p class="lead"> We offer free technical support to our customers and companies evaluating our products. 
+        Our technical support team is commited to providing superior support service, and is available Monday to Friday. <br><br> Contact us! </p>
+        <p>&nbsp; +62698671223242342343192381238</p>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       <!-- Site footer -->

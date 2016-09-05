@@ -1,3 +1,8 @@
+<?php 
+
+session_start();
+
+?>
 <!DOCTYPE HTML>
 <html>  
 <body>
@@ -22,15 +27,13 @@ $sql = "SELECT username, password FROM login";
 $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
-	if($row["username"]==$user){
-		if($row["password"]==$pass){
+	if($row["username"]==$user && $row["password"]==$pass){
+			$_SESSION["valid"]=true;
 			header("Location: employee.php");
-		}
-	}
-	else {
-		echo "<h1>Wrong username or password<h1>";
+			break;
 	}
 }
+echo "<h1>Wron username or password</h1>";
 $conn->close();
 ?>
 </div>
