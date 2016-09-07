@@ -47,6 +47,7 @@ if ($_SESSION["valid"] == false){
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
         <h3 class="text-muted">Payroll System</h3>
+		<p><a class="btn btn-lg btn-success" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></p>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
 

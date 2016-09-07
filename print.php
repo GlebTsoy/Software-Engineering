@@ -1,34 +1,44 @@
-<?php
-
+<?php 
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+#detailed, tr, td{border: 1px solid black;
+	border-collapse: collapse;
+}
+#detailed{width: 50%;
+	position: relative;
+	left: 25%;
+	top:10%;
+}
+tr, td{padding: 10px;}
+</style>
+<script>
+window.print();
+</script>
 </head>
 <body>
-<h2>Employee detailed information</h2>
+<div>
 <?php
-	$servername = "localhost";
+
+$id = $_SESSION["id"];
+
+$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "employee";
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	$q = intval($_GET['q']);
-
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$q."'";
+	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$id."'";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
-	
-	echo "<form action='print.php' method='post'>
-	<table id='detailed'>
+	echo "<table id='detailed'>
 	<tr><td>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
 	<tr><td>First Name</td><td>" . $row["firstname"] ."</td></tr>
 	<tr><td>Last Name</td><td>" . $row["lastname"] ."</td></tr>
@@ -40,14 +50,10 @@ session_start();
 	<tr><td>Email</td><td>" . $row["email"] ."</td></tr>
 	<tr><td>Date Hired</td><td>" . $row["dateHired"] ."</td></tr>
 	<tr><td>Date Terminated</td><td>" . $row["dateTerminated"] ."</td></tr>
-	</table>
-	<input type='submit' value='Document to print'>
-	</form>";
-	
-	$_SESSION["id"] = $row["id"];
-	
-	$conn->close();
+	</table>"
+
 ?>
+</div>
 
 </body>
 </html>
