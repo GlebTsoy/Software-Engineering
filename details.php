@@ -22,7 +22,7 @@ session_start();
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-	
+	$address = "window.location.href = 'changepage.php'";
 	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$q."'";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
@@ -43,11 +43,10 @@ session_start();
 	</table>
 	<input type='submit' value='Document to print'>
 	</form>";
-	
 	$_SESSION["id"] = $row["id"];
 	
 	$conn->close();
 ?>
-
+<button onclick="window.location.href='changepage.php'">Change</button>
 </body>
 </html>

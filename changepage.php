@@ -15,7 +15,7 @@ if ($_SESSION["valid"] == false){
     <meta name="author" content="">
     <link rel="icon" href="cash.png">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Remove Employee</title>
+    <title>Justified Nav Template for Bootstrap</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +40,23 @@ if ($_SESSION["valid"] == false){
   </head>
 
   <body>
+  <?php 
+	
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "employee";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+  ?>
 
     <div class="container">
 
@@ -47,10 +64,11 @@ if ($_SESSION["valid"] == false){
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
         <h3 class="text-muted">Payroll System</h3>
+		<p><a class="btn btn-lg btn-success" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></p>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
             <li><a href="Employee.php">Employee List</a></li>
-            <li class="active"><a href="AddNew.html">Add New</a></li>
+            <li><a href="AddNew.php">Add New</a></li>
             <li><a href="Changelog.php">Changelog</a></li>
             <li><a href="Help.php">Help</a></li>
             </ul>
@@ -59,26 +77,67 @@ if ($_SESSION["valid"] == false){
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Remove employee!</h1>
+        <h1>Change the Employee Details!</h1>
         <p class="lead">
         <style>
 		td{ font-size:20px}
+		#gender{width:218px}
+		#dateform{width:218px}
 		</style>
 <table width="400" border="0" align="center">
   <tbody>
     <tr>
     
-<form action="remove.php" method="post">
-      <td>Remove ID:</td>
-      <td><input type="text" name="IDRemove" value=""></td>
+<form action="change.php" method="post">
+      <td>First Name:</td>
+      <td><input type="text" name="FirstName" placeholder="<?php echo $row['firstname']; ?>"></td>
     </tr>
-    </tbody>
-</table>        <p><a class="btn btn-lg btn-success" href="#" role="button">Submit</a></p>
+    <tr>
+      <td>Last Name:</td>
+      <td><input type="text" name="LastName" placeholder="<?php echo $row['lastname']; ?>"></td>
+    </tr>
+    <tr>                     
+      <td>Date of Birth:</td>
+      <td>
+  <input type="date" name="DOB" id="dateform" value="<?php echo $row['DOB']; ?>"></td>
+    </tr>
+    <tr>
+      <td>Job:</td>
+      <td><input type="text" name="Job" placeholder="<?php echo $row['Job']; ?>"></td>
+    </tr>
+    <tr>
+      <td>Salary:</td>
+      <td><input type="text" name="Salary" placeholder="<?php echo $row['Salary']; ?>"></td>
+    </tr>
+        <tr>
+      <td>Gender:</td>
+      <td><select name="gender" id="gender" >
+       <option value="M">Male</option>
+       <option value="F">Female</option>
+       <option value="?">?????</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Contact Num:</td>
+      <td><input type="text" name="contactNum" placeholder="<?php echo $row['contactNum']; ?>"></td>
+    </tr>
+    <tr>
+      <td>E-Mail:</td>
+      <td><input type="text" name="email" placeholder="<?php echo $row['email']; ?>"></td>
+    </tr>
+    <tr>
+      <td>Date Hired:</td>
+      <td><input type="date" name="dateHired" id="dateform" value="<?php echo $row['dateHired']; ?>"></td>
+    </tr>
+	<tr>
+      <td>Date Terminated:</td>
+      <td><input type="date" name="dateTerminated" id="dateform" value="<?php echo $row['dateTerminated']; ?>"></td>
+    </tr>
+  </tbody>
+</table>        
 
-</p>
-
-<input type="submit" />
-
+<br> <input type="submit" />
 </form>
 <p></p>     </div>
       

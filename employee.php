@@ -110,6 +110,7 @@ if ($_SESSION["valid"] == false){
 					 }
 					 echo "</tbody></table>
 						<input id='remove' type='submit' value='Delete'>
+						
 						</form>";
 				} else {
 					 echo "0 results";
