@@ -5,6 +5,7 @@ $_SESSION["valid"]=false;
 <!DOCTYPE html>
 <html>
 <head>
+<title>Sign in</title>
 <link rel="icon" href="cash.png">
 <style>
 .login { 

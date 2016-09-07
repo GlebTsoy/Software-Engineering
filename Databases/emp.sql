@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2016 at 11:48 AM
+-- Generation Time: Sep 06, 2016 at 03:00 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -34,7 +34,7 @@ CREATE TABLE `emp` (
   `Job` varchar(15) NOT NULL,
   `Salary` int(11) NOT NULL,
   `gender` char(1) NOT NULL,
-  `contact number` int(16) NOT NULL,
+  `contactNum` int(16) NOT NULL,
   `email` char(20) NOT NULL,
   `dateHired` date NOT NULL,
   `dateTerminated` date DEFAULT NULL
@@ -44,9 +44,7 @@ CREATE TABLE `emp` (
 -- Dumping data for table `emp`
 --
 
-INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contact number`, `email`, `dateHired`, `dateTerminated`) VALUES
-(1, 'Gleb', 'Tsoy', '1995-01-01', 'Cleaning Unit', 900, '', 0, '', '0000-00-00', NULL),
-(2, 'Bruce', 'Wayne', '1991-09-01', 'Batman', 0, '', 0, '', '0000-00-00', NULL),
+INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`, `dateTerminated`) VALUES
 (3, 'John', 'Doe', '2016-09-15', 'Someone', 10000, '', 0, '', '0000-00-00', NULL),
 (4, 'Marry', 'Moe', '2016-09-11', 'Another One', 323232, '', 0, '', '0000-00-00', NULL);
 

@@ -53,6 +53,7 @@ if ($_SESSION["valid"] == false){
     <div class="container">
       <div class="masthead">
         <h3 class="text-muted">Payroll System</h3>
+		<p><a class="btn btn-lg btn-success" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></p>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
 
@@ -79,6 +80,7 @@ if ($_SESSION["valid"] == false){
 				td a:hover{text-decoration: none;}
 				#id:hover{background-color:#4caf50; color:white}
 				#detailed{width:50%; position:relative; left:25%}
+				#remove{padding: 8px; margin: 10px;}
 			</style>
 			<?php
 				$servername = "localhost";
@@ -96,15 +98,19 @@ if ($_SESSION["valid"] == false){
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
-					 echo "<table><thead><tr><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th></tr></thead><tbody>";
+					 echo "<form action='remove.php' method='post'><table><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th></tr></thead><tbody>";
 					 while($row = $result->fetch_assoc()) {
-						 echo "<tr><td id='id' onclick='showUser(this.textContent)'>" . 
-						 $row["id"]. "</td><td>" . 
-						 $row["firstname"]. "</td><td>" . 
-						 $row["lastname"]. "</td><td>" . 
-						 $row["Job"]."</td></tr>";
+						 echo "<tr>
+						 <td><input type='checkbox' name='tick[]' value='" .$row["id"]. "'></td>
+						 <td id='id' onclick='showUser(this.textContent)'>" . $row["id"]. "</td>
+						 <td>" . $row["firstname"]. "</td>
+						 <td>" . $row["lastname"]. "</td>
+						 <td>" . $row["Job"]."</td>
+						 </tr>";
 					 }
-					 echo "</tbody></table>";
+					 echo "</tbody></table>
+						<input id='remove' type='submit' value='Delete'>
+						</form>";
 				} else {
 					 echo "0 results";
 				}

@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-  <head>
-  </head>
-  <body>
-  <?php
+<html>
+<head>
+</head>
+<body>
+ <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "employee";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
+if (isset($_POST['tick'])){
+	$value = $_POST['tick'];
 
-$sql = "DELETE FROM emp WHERE id='$_POST[IDRemove]'";
-if ($conn->query($sql) === TRUE) {
-    echo "RIP Employee for that ID";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	foreach($value as $id){
+		$sql = "DELETE FROM emp WHERE id='".$id."'";
+		$conn->query($sql);
+	}
 }
 
+else{
+	header("Location: employee.php");
+}
 
+header("Location: employee.php");
 
 $conn->close();
 ?>
-				</body>
-				
-			</html>
+</body>
+</html>
