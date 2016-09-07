@@ -1,5 +1,6 @@
 <!DOCTYPE html>
   <head>
+<meta http-equiv="refresh" content="0; url=Employee.php" />
   </head>
   <body>
   <?php
@@ -16,10 +17,10 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`) 
-VALUES (NULL, '$_POST[FirstName]', '$_POST[LastName]', '$_POST[DOB]', '$_POST[Job]','$_POST[Salary]')";
+$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`) 
+VALUES (NULL, '$_POST[FirstName]', '$_POST[LastName]', '$_POST[DOB]', '$_POST[Job]','$_POST[Salary]', '$_POST[gender]', '$_POST[contactNum]', '$_POST[email]', '$_POST[dateHired]')";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Redirecting...";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

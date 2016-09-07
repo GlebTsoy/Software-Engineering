@@ -63,12 +63,14 @@ if ($_SESSION["valid"] == false){
         <p class="lead">
         <style>
 		td{ font-size:20px}
+		#gender{width:218px}
+		#dateform{width:218px}
 		</style>
 <table width="400" border="0" align="center">
   <tbody>
     <tr>
     
-<form action="insert.php" method="post">
+<form action="insert.php" method="post" action="#">
       <td>First Name:</td>
       <td><input type="text" name="FirstName" value=""></td>
     </tr>
@@ -78,7 +80,8 @@ if ($_SESSION["valid"] == false){
     </tr>
     <tr>
       <td>Date of Birth:</td>
-      <td><input type="text" name="DOB" value=""></td>
+      <td>
+  <input type="date" name="DOB" id="dateform"></td>
     </tr>
     <tr>
       <td>Job:</td>
@@ -88,12 +91,34 @@ if ($_SESSION["valid"] == false){
       <td>Salary:</td>
       <td><input type="text" name="Salary" value=""></td>
     </tr>
+        <tr>
+      <td>Gender:</td>
+      <td><select name="gender" id="gender" >
+       <option value="M">Male</option>
+       <option value="F">Female</option>
+       <option value="?">?????</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Contact Num:</td>
+      <td><input type="text" name="contactNum" value=""></td>
+    </tr>
+    <tr>
+      <td>E-Mail:</td>
+      <td><input type="text" name="email" value=""></td>
+    </tr>
+    <tr>
+      <td>Date Hired:</td>
+      <td><input type="date" name="dateHired" id="dateform"></td>
+    </tr>
   </tbody>
-</table>        <p><a class="btn btn-lg btn-success" href="RemoveEmp.php" role="button">Remove Employee</a></p>
+</table>        
+
+<br> <input type="submit" />
+<p><p><a class="btn btn-lg btn-success" href="RemoveEmp.php" role="button">Remove Employee</a></p></p>
 
 </p>
-
-<input type="submit" />
 
 </form>
 <p></p>     </div>
