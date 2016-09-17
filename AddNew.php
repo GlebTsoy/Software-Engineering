@@ -13,7 +13,7 @@ if ($_SESSION["valid"] == false){
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="cash.png">
+    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
     <title>Justified Nav Template for Bootstrap</title>
     <!-- InstanceEndEditable -->
@@ -38,18 +38,18 @@ if ($_SESSION["valid"] == false){
   <!-- InstanceBeginEditable name="head" -->
   <!-- InstanceEndEditable -->
   </head>
-
-  <body>
-
-    <div class="container">
-
+  <body style=" background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover">
+   
+    <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted">Payroll System</h3>
-		<p><a class="btn btn-lg btn-success" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></p>
+              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
-          <ul class="nav nav-justified">
+            <ul class="nav nav-justified">
             <li><a href="Employee.php">Employee List</a></li>
             <li class="active"><a href="AddNew.php">Add New</a></li>
             <li><a href="Changelog.php">Changelog</a></li>
@@ -57,7 +57,7 @@ if ($_SESSION["valid"] == false){
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
-
+                          <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
         <h1>Add new employee!</h1>
@@ -125,9 +125,10 @@ if ($_SESSION["valid"] == false){
       
 
       <!-- InstanceEndEditable --><!-- Example row of columns -->
+      </div>
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
       </footer>
 
     </div> <!-- /container -->
@@ -136,5 +137,4 @@ if ($_SESSION["valid"] == false){
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-<!-- InstanceEnd -->
-</html>
+<!-- InstanceEnd --></html>

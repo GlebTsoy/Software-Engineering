@@ -13,7 +13,7 @@ if ($_SESSION["valid"] == false){
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="cash.png">
+    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
     <title>Employee table</title>
     <!-- InstanceEndEditable -->
@@ -29,31 +29,25 @@ if ($_SESSION["valid"] == false){
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
-	<script src="__jquery.tablesorter/jquery-latest.js"></script>
-	<script src="__jquery.tablesorter/jquery.tablesorter.js"></script>
-	<script>
-	function showUser(id){
-		
-		if (window.XMLHttpRequest) {
-			xmlhttp=new XMLHttpRequest();
-		}
-		xmlhttp.onreadystatechange=function() {
-			if (this.readyState==4 && this.status==200) {
-				document.getElementById("txtHint").innerHTML=this.responseText;
-			}
-		}
-		xmlhttp.open("GET","details.php?q="+id,true);
-		xmlhttp.send();
-	}
-	</script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
   </head>
-
-  <body>
-
-    <div class="container">
+  <body style=" background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover">
+   
+    <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted">Payroll System</h3>
-		<p><a class="btn btn-lg btn-success" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></p>
+              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
 
@@ -64,7 +58,7 @@ if ($_SESSION["valid"] == false){
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
-
+                          <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
         <h1>Employee List </h1>
@@ -73,6 +67,7 @@ if ($_SESSION["valid"] == false){
 				table {border-collapse: collapse; width: 100%;}
 				th, td {padding: 8px; text-align: left; border: 1px solid #ddd;}
 				tr:nth-child(even) {background-color: #f2f2f2;}
+				tr:nth-child(odd) {background-color: #FFFFFF;}
 				tr:hover{background-color:#ddd;}
 				th {background-color: #4CAF50; color: white;}
 				th:hover{background-color: white; color: #4CAF50;}
@@ -122,18 +117,15 @@ if ($_SESSION["valid"] == false){
 		<div id="txtHint"><b>Click on id to get more detailed information</b></div>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
+      </div>
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
       </footer>
 
     </div> <!-- /container -->
 
-	<script>
-		$(document).ready(function(){ 
-			$("table").tablesorter(); 
-		});
-	</script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
