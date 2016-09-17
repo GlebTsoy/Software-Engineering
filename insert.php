@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-  <head>
+<head>
 <meta http-equiv="refresh" content="0; url=Employee.php" />
-  </head>
-  <body>
-  <?php
+</head>
+<body>
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "employee";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -24,11 +23,8 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
-
-
 $conn->close();
+
 ?>
-				</body>
-				
-			</html>
+</body>
+</html>

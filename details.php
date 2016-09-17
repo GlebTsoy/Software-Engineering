@@ -48,5 +48,6 @@ session_start();
 	$conn->close();
 ?>
 <button onclick="window.location.href='changepage.php'">Change</button>
+<button onclick="window.location.href='mail.php'">Send Paycheck</button>
 </body>
 </html>
