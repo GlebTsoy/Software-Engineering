@@ -23,7 +23,7 @@ $msg = "PAYCHECK \n
 PAY TO THE ORDER OF ".$name." ".$lname." $".$salary.".\n
 Payroll project";
 
-mail($email,"Paycheck", $msg, "From: payroll@patroll.com");
+mail($email,"Paycheck", $msg, "From: payroll@payroll.com");
 
 $conn->close();
 

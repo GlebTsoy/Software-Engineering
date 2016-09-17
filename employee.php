@@ -94,7 +94,7 @@ if ($_SESSION["valid"] == false){
 					 die("Connection failed: " . $conn->connect_error);
 				}
 
-				$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp";
+				$sql = "SELECT * FROM emp";
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {

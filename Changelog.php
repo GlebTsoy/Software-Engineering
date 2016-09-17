@@ -61,33 +61,12 @@ if ($_SESSION["valid"] == false){
 
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Changelog</h1>
-       <style>
-	   table, th, td {
-    border: 1px solid black;
-	text-align:center;
-	}	   </style>
-        <p class="lead"><table style="width:100%">
-        
-  <tr>
-    <th>Date</th>
-    <th>Changes</th>
-  </tr>
-  <tr>
-    <td>10/10/2015</td>
-    <td>New Employee: Jackson</td> 
-    </tr>
-  <tr>
-    <td>5/10/2015</td>
-    <td>Removed Employee: Jane</td> 
-    </tr>
-    
-  <tr>
-    <td>24/9/2015</td>
-    <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
-    </tr>
-</table></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+	  <?php
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "changelog";
+	  ?>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       <!-- Site footer -->
