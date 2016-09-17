@@ -33,7 +33,7 @@ while($row = $result->fetch_assoc()){
 			break;
 	}
 }
-echo "<h1>Wron username or password</h1>";
+echo "<h1>Wrong username or password</h1><br> <a href='index.php'> Return back </a>   ";
 $conn->close();
 ?>
 </div>

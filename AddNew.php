@@ -117,7 +117,6 @@ if ($_SESSION["valid"] == false){
 </table>        
 
 <br> <input type="submit" />
-<p><p><a class="btn btn-lg btn-success" href="RemoveEmp.php" role="button">Remove Employee</a></p></p>
 
 </p>
 
