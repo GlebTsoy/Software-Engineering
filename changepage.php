@@ -38,12 +38,37 @@ if ($_SESSION["valid"] == false){
   <!-- InstanceBeginEditable name="head" -->
   <!-- InstanceEndEditable -->
   </head>
+<<<<<<< HEAD
   <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
    
     <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
+=======
+
+  <body>
+  <?php 
+	
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "employee";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "SELECT firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$_SESSION["id"]."'";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+  ?>
+
+    <div class="container">
+
+>>>>>>> origin/master
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
@@ -82,7 +107,7 @@ if ($_SESSION["valid"] == false){
     <tr>                     
       <td>Date of Birth:</td>
       <td>
-  <input type="date" name="DOB" id="dateform" value="<?php echo $row['DOB']; ?>"></td>
+  <input type="date" name="DOB" id="dateform" placeholder="<?php echo $row['DOB']; ?>"></td>
     </tr>
     <tr>
       <td>Job:</td>
@@ -94,9 +119,10 @@ if ($_SESSION["valid"] == false){
     </tr>
         <tr>
       <td>Gender:</td>
-      <td><select name="gender" id="gender" >
-       <option value="M">Male</option>
-       <option value="F">Female</option>
+      <td><select name="gender" id="gender">
+	   <option value="" label="<?php echo $row['gender']; ?>" hidden></option>
+       <option value="M">M</option>
+       <option value="F">F</option>
        <option value="?">?????</option>
       </select>
       </td>
@@ -111,11 +137,11 @@ if ($_SESSION["valid"] == false){
     </tr>
     <tr>
       <td>Date Hired:</td>
-      <td><input type="date" name="dateHired" id="dateform" value="<?php echo $row['dateHired']; ?>"></td>
+      <td><input type="date" name="dateHired" id="dateform" placeholder="<?php echo $row['dateHired']; ?>"></td>
     </tr>
 	<tr>
       <td>Date Terminated:</td>
-      <td><input type="date" name="dateTerminated" id="dateform" value="<?php echo $row['dateTerminated']; ?>"></td>
+      <td><input type="date" name="dateTerminated" id="dateform" placeholder="<?php echo $row['dateTerminated']; ?>"></td>
     </tr>
   </tbody>
 </table>        

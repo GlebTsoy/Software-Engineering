@@ -61,6 +61,7 @@ if ($_SESSION["valid"] == false){
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
+<<<<<<< HEAD
         <h1>Changelog</h1>
        <style>
 	   table, th, td {
@@ -87,6 +88,14 @@ if ($_SESSION["valid"] == false){
     <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
     </tr>
 </table></p>
+=======
+	  <?php
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "changelog";
+	  ?>
+>>>>>>> origin/master
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>

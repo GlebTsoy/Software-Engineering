@@ -1,28 +1,21 @@
 <?php
-
 session_start();
-
 ?>
 <!DOCTYPE html>
-  <head>
-  <meta http-equiv="refresh" content="0; url=Employee.php" />
-  </head>
-  <body>
-  <?php
+<head>
+<meta http-equiv="refresh" content="0; url=Employee.php" />
+</head>
+<body>
+<?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "employee";
-
-
-
-
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $id = $_SESSION["id"];
 $firstname = $_POST["FirstName"];
@@ -35,54 +28,51 @@ $contactNum = $_POST["contactNum"];
 $email = $_POST["email"];
 $dateHired = $_POST["dateHired"];
 $dateTerminated = $_POST["dateTerminated"];
+$attributes = array(
+	"firstname"=>$firstname,
+	"lastname"=>$lastname,
+	"DOB"=>$DOB,
+	"Job"=>$Job,
+	"Salary"=>$Salary,
+	"gender"=>$gender,
+	"contactNum"=>$contactNum,
+	"email"=>$email,
+	"dateHired"=>$dateHired,
+	"dateTerminated"=>$dateTerminated
+);
 
-if($firstname!=""){
-	$sql = "UPDATE emp SET firstname = '$firstname' WHERE id=$id";
-	$conn->query($sql);
+foreach($attributes as $key=>$value){
+	if($value!=""){
+		$change_sql = "INSERT INTO changes (id, type, change_from, change_to) VALUES ('$id','Edit', '".from($conn, $id, $key)."', '$value')";
+		changelog($change_sql);
+		$sql = "UPDATE emp SET $key = '$value' WHERE id = $id";
+		$conn->query($sql);
+	}
 }
-if($lastname!=""){
-	$sql = "UPDATE emp SET lastname = '$lastname' WHERE id=$id";
-	$conn->query($sql);
+function from($conn, $id, $attribute){
+	$sql = "SELECT $attribute FROM emp WHERE id=$id";
+	$result = $conn->query($sql);
+	$val = $result->fetch_assoc();
+	return strval($val["$attribute"]);
 }
-if($DOB!=""){
-	$sql = "UPDATE emp SET DOB = '$DOB' WHERE id=$id";
-	$conn->query($sql);
-}
-if($Job!=""){
-	$sql = "UPDATE emp SET Job = '$Job' WHERE id=$id";
-	$conn->query($sql);
-}
-if($Salary!=""){
-	$sql = "UPDATE emp SET Salary = '$Salary' WHERE id=$id";
-	$conn->query($sql);
-}
-if($gender!=""){
-	$sql = "UPDATE emp SET gender = '$gender' WHERE id=$id";
-	$conn->query($sql);
-}
-if($contactNum!=""){
-	$sql = "UPDATE emp SET contactNum = '$contactNum' WHERE id=$id";
-	$conn->query($sql);
-}
-if($email!=""){
-	$sql = "UPDATE emp SET email = '$email' WHERE id=$id";
-	$conn->query($sql);
-}
-if($dateHired!=""){
-	$sql = "UPDATE emp SET dateHired = '$dateHired' WHERE id=$id";
-	$conn->query($sql);
-}
-if($dateTerminated!=""){
-	$sql = "UPDATE emp SET dateTerminated = '$dateTerminated' WHERE id=$id";
-	$conn->query($sql);
-}
-
-
-
-
-
 $conn->close();
+
+function changelog($sql){
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "changelog";
+	$type = "Removed";
+	
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	$conn->query($sql);
+	$conn->close();
+}
+
 ?>
-				</body>
-				
-			</html>
+</body>
+</html>
