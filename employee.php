@@ -43,7 +43,7 @@ if ($_SESSION["valid"] == false){
     background-attachment: fixed;
     background-size:cover">
    
-    <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
+    <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">

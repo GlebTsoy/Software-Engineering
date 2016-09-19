@@ -38,37 +38,12 @@ if ($_SESSION["valid"] == false){
   <!-- InstanceBeginEditable name="head" -->
   <!-- InstanceEndEditable -->
   </head>
-<<<<<<< HEAD
   <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
    
-    <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
-=======
-
-  <body>
-  <?php 
-	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "employee";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
-
-	$sql = "SELECT firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$_SESSION["id"]."'";
-	$result = $conn->query($sql);
-	$row = $result->fetch_assoc();
-  ?>
-
-    <div class="container">
-
->>>>>>> origin/master
+    <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">

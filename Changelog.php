@@ -43,7 +43,7 @@ if ($_SESSION["valid"] == false){
     background-attachment: fixed;
     background-size:cover">
    
-    <div class="container" style=" background-color:rgba(0, 0, 0, 0.1);">
+    <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
@@ -61,7 +61,6 @@ if ($_SESSION["valid"] == false){
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-<<<<<<< HEAD
         <h1>Changelog</h1>
        <style>
 	   table, th, td {
@@ -88,14 +87,13 @@ if ($_SESSION["valid"] == false){
     <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
     </tr>
 </table></p>
-=======
+
 	  <?php
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
 		$dbname = "changelog";
 	  ?>
->>>>>>> origin/master
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
