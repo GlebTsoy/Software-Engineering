@@ -77,6 +77,20 @@ if ($_SESSION["valid"] == false){
 				#detailed{width:50%; position:relative; left:25%}
 				#remove{padding: 8px; margin: 10px;}
 			</style>
+			<script>
+			function showUser(id){
+				if (window.XMLHttpRequest) {
+					xmlhttp=new XMLHttpRequest();
+					}
+					xmlhttp.onreadystatechange=function() {
+						if (this.readyState==4 && this.status==200) {
+							document.getElementById("txtHint").innerHTML=this.responseText;
+							}
+						}
+						xmlhttp.open("GET","details.php?q="+id,true);
+						xmlhttp.send();
+			}
+			</script>
 			<?php
 				$servername = "localhost";
 				$username = "root";
