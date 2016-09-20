@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION["valid"] == false){
-	header("Location: index.php");	
+	header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -92,23 +92,11 @@ if ($_SESSION["valid"] == false){
 			}
 			</script>
 			<?php
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "employee";
-
-				$conn = new mysqli($servername, $username, $password, $dbname);
-
-				if ($conn->connect_error) {
-					 die("Connection failed: " . $conn->connect_error);
-				}
-
-				$sql = "SELECT * FROM emp";
-				$result = $conn->query($sql);
-
-				if ($result->num_rows > 0) {
+				require "databaseConnection.php";
+				$result = selectAll();
+				if (mysqli_num_rows($result)>0) {
 					 echo "<form action='remove.php' method='post'><table><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th></tr></thead><tbody>";
-					 while($row = $result->fetch_assoc()) {
+					 while($row = mysqli_fetch_assoc($result)) {
 						 echo "<tr>
 						 <td><input type='checkbox' name='tick[]' value='" .$row["id"]. "'></td>
 						 <td id='id' onclick='showUser(this.textContent)'>" . $row["id"]. "</td>
@@ -124,8 +112,6 @@ if ($_SESSION["valid"] == false){
 				} else {
 					 echo "0 results";
 				}
-
-				$conn->close();
 			?>
 		</p>
 		<div id="txtHint"><b>Click on id to get more detailed information</b></div>

@@ -8,33 +8,20 @@ session_start();
 <body>
 <div>
 <?php
+require "databaseConnection.php";
 
 $user = strval($_POST["name"]);
 $pass = strval($_POST["password"]);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "employee";
+$_SESSION["valid"] = authorization($user, $pass);
 
-$conn = new mysqli ($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
+if($_SESSION["valid"] == True){
+	header("Location: employee.php");
+}
+else{
+	echo "Wrong username or password!";
 }
 
-$sql = "SELECT username, password FROM login";
-$result = $conn->query($sql);
-
-while($row = $result->fetch_assoc()){
-	if($row["username"]==$user && $row["password"]==$pass){
-			$_SESSION["valid"]=true;
-			header("Location: employee.php");
-			break;
-	}
-}
-echo "<h1>Wrong username or password</h1><br> <a href='index.php'> Return back </a>   ";
-$conn->close();
 ?>
 </div>
 </body>

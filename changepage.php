@@ -67,23 +67,10 @@ if ($_SESSION["valid"] == false){
 		#gender{width:218px}
 		#dateform{width:218px}
 		</style>
-		<?php 
-	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "employee";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
-
-	$sql = "SELECT firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$_SESSION["id"]."'";
-	$result = $conn->query($sql);
-	$row = $result->fetch_assoc();
-  ?>
+		<?php
+			require "databaseConnection.php";
+			$row = selectById($_SESSION["id"]);
+		?>
 <table width="400" border="0" align="center">
   <tbody>
     <tr>
