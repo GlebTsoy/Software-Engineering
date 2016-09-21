@@ -4,19 +4,27 @@
 </head>
 <body>
 <?php
-require "databaseConnection.php";
-$id = NULL;
-$firstname = $_POST["FirstName"];
-$lastname = $_POST["LastName"];
-$dob = $_POST["DOB"];
-$job = $_POST["Job"];
-$salary = $_POST["Salary"];
-$gender = $_POST["gender"];
-$contactNum = $_POST["contactNum"];
-$email = $_POST["email"];
-$dateHired = $_POST["dateHired"];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "employee";
 
-addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $gender, $contactNum, $email, $dateHired);
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
+$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`) 
+VALUES (NULL, '$_POST[FirstName]', '$_POST[LastName]', '$_POST[DOB]', '$_POST[Job]','$_POST[Salary]', '$_POST[gender]', '$_POST[contactNum]', '$_POST[email]', '$_POST[dateHired]')";
+if ($conn->query($sql) === TRUE) {
+    echo "Redirecting...";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
 
 ?>
 </body>

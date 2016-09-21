@@ -16,19 +16,28 @@ session_start();
 tr, td{padding: 10px;}
 </style>
 <script>
-	window.print();
+window.print();
 </script>
 </head>
 <body>
 <div>
 <?php
-	
-	require "databaseConnection.php";
-	
-	$id = $_SESSION["id"];
-	
-	$row = selectById($id);
 
+$id = $_SESSION["id"];
+
+$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "employee";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$id."'";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
 	echo "<table id='detailed'>
 	<tr><td>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
 	<tr><td>First Name</td><td>" . $row["firstname"] ."</td></tr>
@@ -45,5 +54,6 @@ tr, td{padding: 10px;}
 
 ?>
 </div>
+
 </body>
 </html>
