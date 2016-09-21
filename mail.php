@@ -1,18 +1,8 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "employee";
-$conn = new mysqli($servername, $username, $password, $dbname);
+require "databaseConnection.php";
 
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT firstname, lastname, salary, email FROM emp WHERE id='".$_SESSION["id"]."'";
-$result = $conn->query($sql);
-$value = $result->fetch_assoc();
+$value = selectById($_SESSION["id"]);
 
 $name = $value["firstname"];
 $lname = $value["lastname"];
@@ -28,5 +18,4 @@ mail($email,"Paycheck", $msg, "From: payroll@payroll.com");
 $conn->close();
 
 header("Location: employee.php");
-
 ?>

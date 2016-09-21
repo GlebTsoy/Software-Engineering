@@ -10,22 +10,10 @@ session_start();
 <body>
 <h2>Employee detailed information</h2>
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "employee";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	require "databaseConnection.php";
+	$id = intval($_GET['q']);
 	
-	$q = intval($_GET['q']);
-
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
-	$address = "window.location.href = 'changepage.php'";
-	$sql = "SELECT id, firstname, lastname, DOB, Job, Salary, gender, contactNum, email, dateHired, dateTerminated FROM emp WHERE id='".$q."'";
-	$result = $conn->query($sql);
-	$row = $result->fetch_assoc();
+	$row = selectById($id);
 	
 	echo "<form action='print.php' method='post'>
 	<table id='detailed'>
@@ -45,7 +33,6 @@ session_start();
 	</form>";
 	$_SESSION["id"] = $row["id"];
 	
-	$conn->close();
 ?>
 <button onclick="window.location.href='changepage.php'">Change</button>
 <button onclick="window.location.href='mail.php'">Send Paycheck</button>
