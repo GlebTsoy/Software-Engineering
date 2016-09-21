@@ -1,5 +1,6 @@
 <?php
 session_start();
+if ($_SESSION["valid"] != "Admin"){
 	header("Location: index.php");	
 }
 ?>
