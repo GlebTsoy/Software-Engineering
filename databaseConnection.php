@@ -42,14 +42,20 @@ function selectById($id){
 }
 
 function authorization($username, $password){
-	$token = False;
+	$token = "Denied";
 	$a = new DatabaseConnection();
-	$sql = "SELECT username, password FROM login";
+	$sql = "SELECT username, password, clearance FROM emp";
 	$result = $a->runSql($sql);
 	while($row = mysqli_fetch_assoc($result)){
 		if($row["username"]==$username && $row["password"]==$password){
-			$token = True;
-			break;
+			if($row["clearance"]=="admin"){
+				$token = "Admin";
+				break;
+			}
+			else{
+				$token="User";
+				break;
+			}
 		}
 	}
 	$a->closeConn();
@@ -65,10 +71,10 @@ function removeEmp($empIdArray){
 	$a->closeConn();
 }
 
-function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $gender, $contactNum, $email, $dateHired){
+function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
 	$a = new DatabaseConnection();
-	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`) 
-	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$gender', '$contactNum', '$email', '$dateHired')";
+	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance) 
+	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
 	$a->runSql($sql);
 	$a->closeConn();
 }

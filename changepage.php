@@ -1,6 +1,5 @@
 <?php
 session_start();
-if ($_SESSION["valid"] == false){
 	header("Location: index.php");	
 }
 ?>

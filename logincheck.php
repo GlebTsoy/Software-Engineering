@@ -15,7 +15,7 @@ $pass = strval($_POST["password"]);
 
 $_SESSION["valid"] = authorization($user, $pass);
 
-if($_SESSION["valid"] == True){
+if($_SESSION["valid"] == "Admin"){
 	header("Location: employee.php");
 }
 else{

@@ -15,6 +15,9 @@ $gender = $_POST["gender"];
 $contactNum = $_POST["contactNum"];
 $email = $_POST["email"];
 $dateHired = $_POST["dateHired"];
+$username = $_POST["username"];
+$password = $_POST["password"];
+$clearance = $_POST["clearance"];
 
 addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $gender, $contactNum, $email, $dateHired);
 

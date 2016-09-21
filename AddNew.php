@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["valid"] == false){
+if ($_SESSION["valid"] != "Admin"){
 	header("Location: index.php");	
 }
 ?>
@@ -113,6 +113,21 @@ if ($_SESSION["valid"] == false){
       <td>Date Hired:</td>
       <td><input type="date" name="dateHired" id="dateform"></td>
     </tr>
+	<tr>
+		<td>Username:</td>
+		<td><input type="text" name = "username"></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="text" name = "password"></td>
+	</tr>
+	<tr>
+		<td>Clearance</td>
+		<td><select name="clearance">
+			<option value="admin">Admin</option>
+			<option value="user">User</option>
+		</td>
+	</tr>
   </tbody>
 </table>        
 

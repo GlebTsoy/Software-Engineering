@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["valid"]=false;
+$_SESSION["valid"]="Denied";
 ?>
 <!DOCTYPE html>
 <html>
