@@ -92,6 +92,10 @@ if ($_SESSION["valid"] != "Admin"){
       <td>Salary:</td>
       <td><input type="text" name="Salary" value="" required></td>
     </tr>
+	<tr>
+		<td>Salary rate:</td>
+		<td><input type='text' name = 'salaryRate'></td>
+	</tr>
         <tr>
       <td>Gender:</td>
       <td><select name="gender" id="gender" required>

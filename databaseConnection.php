@@ -71,10 +71,10 @@ function removeEmp($empIdArray){
 	$a->closeConn();
 }
 
-function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
+function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
 	$a = new DatabaseConnection();
-	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance) 
-	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
+	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, salaryRate, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance) 
+	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$salaryRate', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
 	$a->runSql($sql);
 	$a->closeConn();
 }

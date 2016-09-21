@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2016 at 03:00 PM
+-- Generation Time: Sep 21, 2016 at 08:18 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -35,18 +35,21 @@ CREATE TABLE `emp` (
   `Salary` int(11) NOT NULL,
   `gender` char(1) NOT NULL,
   `contactNum` int(16) NOT NULL,
-  `email` char(20) NOT NULL,
+  `email` char(50) NOT NULL,
   `dateHired` date NOT NULL,
-  `dateTerminated` date DEFAULT NULL
+  `dateTerminated` date DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `clearance` varchar(5) NOT NULL,
+  `salaryRate` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `emp`
 --
 
-INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`, `dateTerminated`) VALUES
-(3, 'John', 'Doe', '2016-09-15', 'Someone', 10000, '', 0, '', '0000-00-00', NULL),
-(4, 'Marry', 'Moe', '2016-09-11', 'Another One', 323232, '', 0, '', '0000-00-00', NULL);
+INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, `gender`, `contactNum`, `email`, `dateHired`, `dateTerminated`, `username`, `password`, `clearance`, `salaryRate`) VALUES
+(1, 'Gleb', 'Tsoy', '1995-01-01', 'Student', 500, 'M', 12345678, 'everlivingtsoy@gmail.com', '2016-09-01', NULL, 'admin', 'admin', 'admin', 50);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +69,7 @@ ALTER TABLE `emp`
 -- AUTO_INCREMENT for table `emp`
 --
 ALTER TABLE `emp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

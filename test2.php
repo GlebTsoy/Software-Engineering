@@ -21,8 +21,9 @@ switch ($formType){
 }
 
 function timeCard(){
-	echo "<form> 
-	<input type='text'>
+	echo "<form action='calculate.php' method = 'post'>
+	<input type='hidden' name='form' value = 'time'>
+	<input type='text' name='value'>
 	<input type='submit'>
 	</form>";
 }
@@ -34,7 +35,8 @@ function paySlip(){
 function sales(){
 	echo "<form>
 	<input type='text'>
-	<input type='submit>
+	<input type='hidden' name='form' value='sales'
+	<input type='submit name='value'>
 	</form>";
 }
 
