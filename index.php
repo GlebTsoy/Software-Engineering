@@ -25,7 +25,10 @@ $_SESSION["valid"]="Denied";
  }
 </style>
 </head>
-<body>
+<body style=" background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover">
 <div class="login">
 <h2>Payroll</h2>
 <form action="logincheck.php" method="post">

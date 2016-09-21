@@ -2,7 +2,10 @@
 <head>
 <meta http-equiv="refresh" content="0; url=Employee.php" />
 </head>
-<body>
+<body style=" background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover">
 <?php
 require "databaseConnection.php";
 $id = NULL;

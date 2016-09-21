@@ -73,28 +73,28 @@ if ($_SESSION["valid"] != "Admin"){
     
 <form action="insert.php" method="post" action="#">
       <td>First Name:</td>
-      <td><input type="text" name="FirstName" value=""></td>
+      <td><input type="text" name="FirstName" value="" required></td>
     </tr>
     <tr>
       <td>Last Name:</td>
-      <td><input type="text" name="LastName" value=""></td>
+      <td><input type="text" name="LastName" value="" required></td>
     </tr>
     <tr>
       <td>Date of Birth:</td>
       <td>
-  <input type="date" name="DOB" id="dateform"></td>
+  <input type="date" name="DOB" id="dateform" required></td>
     </tr>
     <tr>
       <td>Job:</td>
-      <td><input type="text" name="Job" value=""></td>
+      <td><input type="text" name="Job" value="" required></td>
     </tr>
     <tr>
       <td>Salary:</td>
-      <td><input type="text" name="Salary" value=""></td>
+      <td><input type="text" name="Salary" value="" required></td>
     </tr>
         <tr>
       <td>Gender:</td>
-      <td><select name="gender" id="gender" >
+      <td><select name="gender" id="gender" required>
        <option value="M">Male</option>
        <option value="F">Female</option>
        <option value="?">?????</option>
@@ -107,7 +107,7 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>E-Mail:</td>
-      <td><input type="text" name="email" value=""></td>
+      <td><input type="text" name="email" value="" required></td>
     </tr>
     <tr>
       <td>Date Hired:</td>
