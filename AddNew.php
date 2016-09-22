@@ -90,11 +90,11 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>Salary:</td>
-      <td><input type="text" name="Salary" value="" required></td>
+      <td><input type="number" name="Salary" value="" required></td>
     </tr>
 	<tr>
 		<td>Salary rate:</td>
-		<td><input type='text' name = 'salaryRate'></td>
+		<td><input type='number' name = 'salaryRate'></td>
 	</tr>
         <tr>
       <td>Gender:</td>
@@ -107,11 +107,11 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>Contact Num:</td>
-      <td><input type="text" name="contactNum" value=""></td>
+      <td><input type="number" name="contactNum" value=""></td>
     </tr>
     <tr>
       <td>E-Mail:</td>
-      <td><input type="text" name="email" value="" required></td>
+      <td><input type="email" name="email" value="" required></td>
     </tr>
     <tr>
       <td>Date Hired:</td>
