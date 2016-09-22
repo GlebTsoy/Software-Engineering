@@ -99,7 +99,7 @@ if ($_SESSION["valid"] != "Admin"){
 					 while($row = mysqli_fetch_assoc($result)) {
 						 echo "<tr>
 						 <td><input type='checkbox' name='tick[]' value='" .$row["id"]. "'></td>
-						 <td id='id' onclick='showUser(this.textContent)'>" . $row["id"]. "</td>
+						 <td id='id' onclick='showUser(this.textContent); setTimeout(scrollfunction, 10)'>" . $row["id"]. "</td>
 						 <td>" . $row["firstname"]. "</td>
 						 <td>" . $row["lastname"]. "</td>
 						 <td>" . $row["Job"]."</td>
@@ -116,6 +116,14 @@ if ($_SESSION["valid"] != "Admin"){
 		</p>
 		<div id="txtHint"><b>Click on id to get more detailed information</b></div>
       </div>
+      <script type-"text/javascript">
+	
+       function scrollfunction(e) {
+		   
+       window.location.href="#txtHint";
+       }
+
+     </script>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->

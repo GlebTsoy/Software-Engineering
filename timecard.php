@@ -1,11 +1,5 @@
-<?php
-session_start();
-if ($_SESSION["valid"] != "Admin"){
-	header("Location: index.php");	
-}
-?>
 <!DOCTYPE html>
-<html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="en"><!-- InstanceBegin template="/Templates/indexEmp.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +9,7 @@ if ($_SESSION["valid"] != "Admin"){
     <meta name="author" content="">
     <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Changelog</title>
+    <title>Justified Nav Template for Bootstrap</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +36,7 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-  
+   
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -50,50 +44,42 @@ if ($_SESSION["valid"] != "Admin"){
               <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
-
-            <li ><a href="Employee.php">Employee List</a></li>
-            <li><a href="AddNew.php">Add New</a></li>
-            <li class="active"><a href="Changelog.php">Changelog</a></li>
-            <li><a href="Help.php">Help</a></li>
+            <li class="active"><a href="Employee.html">Timecard</a></li>
+            <li><a href="AddNew.html">Sales</a></li>
+            <li><a href="Changelog.html">Payslip</a></li>
+            <li><a href="Help.html">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Changelog</h1>
-       <style>
-	   table, th, td {
-    border: 1px solid black;
-	text-align:center;
-	}	   </style>
-        <p class="lead"><table style="width:100%">
+        <h1>Payment</h1>
+        <p class="lead">
         
-  <tr>
-    <th>Date</th>
-    <th>Changes</th>
-  </tr>
-  <tr>
-    <td>10/10/2015</td>
-    <td>New Employee: Jackson</td> 
-    </tr>
-  <tr>
-    <td>5/10/2015</td>
-    <td>Removed Employee: Jane</td> 
-    </tr>
-    
-  <tr>
-    <td>24/9/2015</td>
-    <td>Changed Employee Salary: Jane, 3000 -> 2000</td> 
-    </tr>
-</table></p>
+		<script>
+		
+			function showForm(formName){
+				if (window.XMLHttpRequest) {
+					xmlhttp=new XMLHttpRequest();
+					}
+					xmlhttp.onreadystatechange=function() {
+						if (this.readyState==4 && this.status==200) {
+							document.getElementById("forms").innerHTML=this.responseText;
+							}
+						}
+						xmlhttp.open("GET","test2.php?q="+formName,true);
+						xmlhttp.send();
+			}
 
-	  <?php
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "changelog";
-	  ?>
+		</script>
+
+		<button onclick = "showForm(this.textContent)">Time</button>
+		<button onclick = "showForm(this.textContent)">Sales</button>
+		<button onclick = "showForm(this.textContent)">Payslip</button>
+		<div id="forms"></div>
+        
+        </p>
       </div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>

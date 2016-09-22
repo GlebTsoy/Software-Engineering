@@ -5,7 +5,10 @@ session_start();
 ?>
 <!DOCTYPE HTML>
 <html>  
-<body>
+<body style=" background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover">
 <div>
 <?php
 require "databaseConnection.php";
@@ -19,7 +22,7 @@ if($_SESSION["valid"] == "Admin"){
 	header("Location: employee.php");
 }
 else{
-	echo "Wrong username or password!";
+	echo " <div align='center'> <h1>Wrong username or password!</h1><p> <br><a href='index.php'>Return</a></div></p> ";
 }
 
 ?>

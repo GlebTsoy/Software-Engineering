@@ -77,29 +77,34 @@ if ($_SESSION["valid"] != "Admin"){
     
 <form action="change.php" method="post">
       <td>First Name:</td>
-      <td><input type="text" name="FirstName" placeholder="<?php echo $row['firstname']; ?>"></td>
+      <td><input type="text" name="FirstName" style="text-transform: capitalize;"  value="<?php echo $row['firstname']; ?>"></td>
     </tr>
     <tr>
       <td>Last Name:</td>
-      <td><input type="text" name="LastName" placeholder="<?php echo $row['lastname']; ?>"></td>
+      <td><input type="text" name="LastName" style="text-transform: capitalize;"  required value="<?php echo $row['lastname']; ?>"></td>
     </tr>
     <tr>                     
       <td>Date of Birth:</td>
       <td>
-  <input type="date" name="DOB" id="dateform" placeholder="<?php echo $row['DOB']; ?>"></td>
+  <input type="date" name="DOB" id="dateform" value="<?php echo $row['DOB']; ?>"></td>
     </tr>
     <tr>
       <td>Job:</td>
-      <td><input type="text" name="Job" placeholder="<?php echo $row['Job']; ?>"></td>
+      <td><input type="text" name="Job" value="<?php echo $row['Job']; ?>"></td>
     </tr>
+     <tr>
+      <td>Salary Rate:</td>
+		<td><input type='number' name = 'salaryRate' value="<?php echo $row['salaryRate']; ?>"></td>
+    </tr>
+
     <tr>
       <td>Salary:</td>
-      <td><input type="text" name="Salary" placeholder="<?php echo $row['Salary']; ?>"></td>
+      <td><input type="number" name="Salary" required value="<?php echo $row['Salary']; ?>"></td>
     </tr>
         <tr>
       <td>Gender:</td>
-      <td><select name="gender" id="gender">
-	   <option value="" label="<?php echo $row['gender']; ?>" hidden></option>
+      <td><select name="gender" required id="gender">
+	   <option value="<?php echo $row['gender']; ?>" label="<?php echo $row['gender']; ?>" hidden></option>
        <option value="M">M</option>
        <option value="F">F</option>
        <option value="?">?????</option>
@@ -108,19 +113,19 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>Contact Num:</td>
-      <td><input type="text" name="contactNum" placeholder="<?php echo $row['contactNum']; ?>"></td>
+      <td><input type="tel" name="contactNum" value="<?php echo $row['contactNum']; ?>"></td>
     </tr>
     <tr>
       <td>E-Mail:</td>
-      <td><input type="text" name="email" placeholder="<?php echo $row['email']; ?>"></td>
+      <td><input type="email" name="email" required value="<?php echo $row['email']; ?>"></td>
     </tr>
     <tr>
       <td>Date Hired:</td>
-      <td><input type="date" name="dateHired" id="dateform" placeholder="<?php echo $row['dateHired']; ?>"></td>
+      <td><input type="date" name="dateHired" id="dateform" required value="<?php echo $row['dateHired']; ?>"></td>
     </tr>
 	<tr>
       <td>Date Terminated:</td>
-      <td><input type="date" name="dateTerminated" id="dateform" placeholder="<?php echo $row['dateTerminated']; ?>"></td>
+      <td><input type="date" name="dateTerminated" id="dateform" value="<?php echo $row['dateTerminated']; ?>"></td>
     </tr>
   </tbody>
 </table>        

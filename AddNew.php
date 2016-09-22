@@ -66,6 +66,12 @@ if ($_SESSION["valid"] != "Admin"){
 		td{ font-size:20px}
 		#gender{width:218px}
 		#dateform{width:218px}
+		input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 		</style>
 <table width="400" border="0" align="center">
   <tbody>
@@ -73,11 +79,11 @@ if ($_SESSION["valid"] != "Admin"){
     
 <form action="insert.php" method="post" action="#">
       <td>First Name:</td>
-      <td><input type="text" name="FirstName" value="" required></td>
+      <td><input type="text" name="FirstName" value=""  style="text-transform: capitalize;"  required></td>
     </tr>
     <tr>
       <td>Last Name:</td>
-      <td><input type="text" name="LastName" value="" required></td>
+      <td><input type="text" name="LastName" value=""  style="text-transform: capitalize;" required></td>
     </tr>
     <tr>
       <td>Date of Birth:</td>
@@ -90,11 +96,11 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>Salary:</td>
-      <td><input type="text" name="Salary" value="" required></td>
+      <td><input type="number" name="Salary" value="" required></td>
     </tr>
 	<tr>
 		<td>Salary rate:</td>
-		<td><input type='text' name = 'salaryRate'></td>
+		<td><input type='number' name = 'salaryRate'></td>
 	</tr>
         <tr>
       <td>Gender:</td>
@@ -107,11 +113,11 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
     <tr>
       <td>Contact Num:</td>
-      <td><input type="text" name="contactNum" value=""></td>
+      <td><input type="tel" name="contactNum" value=""></td>
     </tr>
     <tr>
       <td>E-Mail:</td>
-      <td><input type="text" name="email" value="" required></td>
+      <td><input type="email" name="email" value="" required></td>
     </tr>
     <tr>
       <td>Date Hired:</td>
@@ -119,15 +125,19 @@ if ($_SESSION["valid"] != "Admin"){
     </tr>
 	<tr>
 		<td>Username:</td>
-		<td><input type="text" name = "username"></td>
+		<td><input type="text" name = "username" required></td>
 	</tr>
 	<tr>
 		<td>Password:</td>
-		<td><input type="text" name = "password"></td>
+		<td><input type="password" name ="password" id="password" required></td>
 	</tr>
+    <tr>
+		<td>Confirm Password:</td>
+		<td><input type="password" id="confirm_password" required></td>
+	</tr>    
 	<tr>
 		<td>Clearance</td>
-		<td><select name="clearance">
+		<td><select name="clearance" required>
 			<option value="admin">Admin</option>
 			<option value="user">User</option>
 		</td>
@@ -141,7 +151,19 @@ if ($_SESSION["valid"] != "Admin"){
 
 </form>
 <p></p>     </div>
-      
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;</script>     
 
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
