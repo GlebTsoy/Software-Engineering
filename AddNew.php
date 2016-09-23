@@ -51,7 +51,7 @@ if ($_SESSION["valid"] != "Admin"){
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
             <ul class="nav nav-justified">
             <li><a href="employee.php">Employee List</a></li>
-            <li class="active"><a href="addNew.php">Add New</a></li>
+            <li class="active"><a href="addnew.php">Add New</a></li>
             <li><a href="help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>

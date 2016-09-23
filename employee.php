@@ -50,9 +50,8 @@ if ($_SESSION["valid"] != "Admin"){
               <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
           <ul class="nav nav-justified">
-
             <li class="active"><a href="employee.php">Employee List</a></li>
-            <li><a href="adNew.php">Add New</a></li>
+            <li><a href="addnew.php">Add New</a></li>
             <li><a href="help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
@@ -83,7 +82,7 @@ if ($_SESSION["valid"] != "Admin"){
 					}
 					xmlhttp.onreadystatechange=function() {
 						if (this.readyState==4 && this.status==200) {
-							document.getElementById("txtHint").innerHTML=this.responseText;
+							document.getElementById("employeeDetails").innerHTML=this.responseText;
 							}
 						}
 						xmlhttp.open("GET","details.php?q="+id,true);
@@ -113,13 +112,13 @@ if ($_SESSION["valid"] != "Admin"){
 				}
 			?>
 		</p>
-		<div id="txtHint"><b>Click on id to get more detailed information</b></div>
+		<div id="employeeDetails"><b>Click on id to get more detailed information</b></div>
       </div>
       <script type-"text/javascript">
 	
        function scrollfunction(e) {
 		   
-       window.location.href="#txtHint";
+       window.location.href="#employeeDetails";
        }
 
      </script>
