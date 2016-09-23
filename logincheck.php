@@ -24,7 +24,7 @@ $_SESSION["loginID"] = $result["id"];
 switch ($_SESSION["valid"]){
 
 	case "Admin":
-		header("Location: employee.php");
+    echo "<script>window.location.assign('employee.php')</script>";
 		break;
 	case "User":
 		header("Location: test.php");
