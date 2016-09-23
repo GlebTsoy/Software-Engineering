@@ -71,6 +71,7 @@
     <?php require "databaseConnection.php";
       $id = $_SESSION["loginID"];
       $salarytype = selectById($id)["salarytype"];
+	  
     ?>
 		<script>
 
@@ -94,7 +95,8 @@
 
         </p>
       </div>
-      <script>
+	  
+ <script>
       var salarytype = "<?php echo $salarytype ?>";
       switch (salarytype) {
         case "commission":

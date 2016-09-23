@@ -18,7 +18,7 @@ switch ($form){
 		$number = array('hours' => $hours);
 		setNumber($id, $table, $number);
 		$rate = intval(getRate($id, $table)["salaryRate"]);
-		$salary = $rate*$hours;
+		$salary = $rate * $hours;
 		break;
 	case "sales":
 		$table = "commissionemp";
