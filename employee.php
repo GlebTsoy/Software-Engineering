@@ -19,9 +19,9 @@ if ($_SESSION["valid"] != "Admin"){
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="__jquery.tablesorter/jquery.tablesorter.js"></script> 
-	<script src="__jquery.tablesorter/jquery-latest.js"></script>  
-	
+		<script src="__jquery.tablesorter/jquery-latest.js"></script>
+		<script src="__jquery.tablesorter/jquery.tablesorter.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -95,7 +95,7 @@ if ($_SESSION["valid"] != "Admin"){
 			</style>
 			<script>
 			function showUser(id){
-				
+
 				if (window.XMLHttpRequest) {
 					xmlhttp=new XMLHttpRequest();
 					}
@@ -114,7 +114,7 @@ if ($_SESSION["valid"] != "Admin"){
 				require "databaseConnection.php";
 				$result = selectAll();
 				if (mysqli_num_rows($result)>0) {
-					 echo "<form action='remove.php' method='post'><table><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th></tr></thead><tbody>";
+					 echo "<form action='remove.php' method='post'><table id='empTable'><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th><th>Slar type</th></tr></thead><tbody>";
 					 while($row = mysqli_fetch_assoc($result)) {
 						 echo "<tr>
 						 <td><input type='checkbox' name='tick[]' value='" .$row["id"]. "'></td>
@@ -122,6 +122,7 @@ if ($_SESSION["valid"] != "Admin"){
 						 <td>" . $row["firstname"]. "</td>
 						 <td>" . $row["lastname"]. "</td>
 						 <td>" . $row["Job"]."</td>
+						 <td>" . $row["salarytype"]. "</td>
 						 </tr>";
 					 }
 					 echo "</tbody></table>
@@ -145,8 +146,8 @@ if ($_SESSION["valid"] != "Admin"){
 
      </script>
 	 	<script>
-		$(document).ready(function(){ 
-			$("table").tablesorter(); 
+		$(document).ready(function(){
+			$("#empTable").tablesorter();
 		});
 	</script>
 	  <!-- InstanceEndEditable --><!-- Example row of columns -->

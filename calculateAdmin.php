@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta http-equiv="refresh" content="0; url=employee.php" />
 </head>
 <body>
@@ -35,11 +34,8 @@
     function send($emps, $table, $array){
       foreach ($emps as $emp) {
         sendMail($emp);
-<<<<<<< HEAD
         setSalary($emp["id"], 0, $table);
         setNumber($emp['id'], $table, $array);
-=======
->>>>>>> origin/master
       }
     }
   ?>
