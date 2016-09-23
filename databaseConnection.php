@@ -44,7 +44,7 @@ function selectById($id){
 function authorization($username, $password){
 	$token = "Denied";
 	$a = new DatabaseConnection();
-	$sql = "SELECT username, password, clearance FROM emp";
+	$sql = "SELECT id, username, password, clearance FROM emp";
 	$result = $a->runSql($sql);
 	while($row = mysqli_fetch_assoc($result)){
 		if($row["username"]==$username && $row["password"]==$password){
@@ -58,8 +58,9 @@ function authorization($username, $password){
 			}
 		}
 	}
+	$id_and_token = array("id"=>$row["id"], "token"=>$token);
 	$a->closeConn();
-	return $token;
+	return $id_and_token;
 }
 
 function removeEmp($empIdArray){

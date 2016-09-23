@@ -3,7 +3,8 @@
 </head>
 <body>
 <?php
-
+session_start();
+require "databaseConnection.php";
 $formType = $_GET["q"];
 
 switch ($formType){
@@ -16,8 +17,6 @@ switch ($formType){
 	case "Sales":
 		sales();
 		break;
-	default:
-	echo "На хуй иди";
 }
 
 function timeCard(){
@@ -29,14 +28,25 @@ function timeCard(){
 }
 
 function paySlip(){
-	echo "your payment is 0 cause system does not work, haha";
+	$id = $_SESSION["loginID"];
+	$weekday = date("l");
+	$monthDay = date("d");
+	
+	$row = selectById($id);
+	if($weekday == "Friday"){	
+		echo "Payday, your salary is ".$row["Salary"];
+	}
+	else{
+		echo "It is not payday yet, your earnings so far: ".$row["Salary"]."$";
+	}
 }
 
 function sales(){
 	echo "<form>
 	<input type='text'>
 	<input type='hidden' name='form' value='sales'
-	<input type='submit name='value'>
+	<input type='text' name='value'>
+	<input type='submit'>
 	</form>";
 }
 
