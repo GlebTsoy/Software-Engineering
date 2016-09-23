@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <head>
-<meta http-equiv="refresh" content="0; url=Employee.php" />
+<meta http-equiv="refresh" content="0; url=employee.php" />
 </head>
 <body>
 <?php
