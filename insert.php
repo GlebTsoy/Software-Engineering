@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<meta http-equiv="refresh" content="0; url=Employee.php" />
+<meta http-equiv="refresh" content="0; url=employee.php" />
 </head>
 <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
