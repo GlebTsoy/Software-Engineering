@@ -52,9 +52,8 @@ if ($_SESSION["valid"] != "Admin"){
           <ul class="nav nav-justified">
 
             <li class="active"><a href="employee.php">Employee List</a></li>
-            <li><a href="AddNew.php">Add New</a></li>
-            <li><a href="Changelog.php">Changelog</a></li>
-            <li><a href="Help.php">Help</a></li>
+            <li><a href="adNew.php">Add New</a></li>
+            <li><a href="help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>

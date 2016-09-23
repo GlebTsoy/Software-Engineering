@@ -42,7 +42,7 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-   
+  
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -50,10 +50,9 @@ if ($_SESSION["valid"] != "Admin"){
               <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
             <ul class="nav nav-justified">
-            <li><a href="Employee.php">Employee List</a></li>
-            <li class="active"><a href="AddNew.php">Add New</a></li>
-            <li><a href="Changelog.php">Changelog</a></li>
-            <li><a href="Help.php">Help</a></li>
+            <li><a href="employee.php">Employee List</a></li>
+            <li class="active"><a href="addNew.php">Add New</a></li>
+            <li><a href="help.php">Help</a></li>
             </ul>
         <!-- InstanceEndEditable --></nav>
       </div>
