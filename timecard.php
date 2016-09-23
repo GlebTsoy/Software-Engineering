@@ -41,15 +41,19 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
-        <nav><!-- InstanceBeginEditable name="EditRegion4" -->
-          <ul class="nav nav-justified">
-            <li class="active"><a href="Employee.html">Timecard</a></li>
-            <li><a href="AddNew.html">Sales</a></li>
-            <li><a href="Changelog.html">Payslip</a></li>
-            <li><a href="Help.html">Help</a></li>
-            </ul>
-        <!-- InstanceEndEditable --></nav>
+    <header class="header-login-signup">
+	<div class="header-limiter">
+		<h1>Payroll <span>System</span></h1>
+		<ul>
+			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
+		</ul>
+
+	</div>
+</header>  
+<link rel="stylesheet" type="text/css" href="assets/header-login-signup.css">
+           <nav><!-- InstanceBeginEditable name="EditRegion4" -->
+
+  <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->

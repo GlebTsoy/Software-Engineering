@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,61 +7,72 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
-    <!-- TemplateBeginEditable name="doctitle" -->
+    <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
+    <!-- InstanceBeginEditable name="doctitle" -->
     <title>Justified Nav Template for Bootstrap</title>
-    <!-- TemplateEndEditable -->
+    <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../bootstrap-3.3.7/bootstrap-3.3.7/docs/examples/justified-nav/justified-nav.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/examples/justified-nav/justified-nav.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <!-- TemplateBeginEditable name="head" -->
-  <!-- TemplateEndEditable -->
-  </head>
-  <body style=" background-image:url(../bg.jpg);
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
+  </head><link rel="stylesheet" type="text/css" href="assets/header-login-signup.css">
+
+  <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-   
+  
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-    <header class="header-login-signup">
+ 
+ 
+        <nav><!-- InstanceBeginEditable name="EditRegion4" -->
+              <header class="header-login-signup">
 	<div class="header-limiter">
-		<h1>Payroll <span>System</span></h1>
+		<h1><a href="#">Payroll <span>System</span></a></h1>
+		<nav>
+			<a href="employee.php">Employee List</a>
+			<a href="addnew.php">Add New</a>
+			<a href="faq.php" >FAQ</a>
+			<a href="contacts.php" class="selected">Contacts</a>
+		</nav>
+
 		<ul>
 			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
 		</ul>
 
 	</div>
-</header>  
-<link rel="stylesheet" type="text/css" href="../assets/header-login-signup.css">
-           <nav><!-- TemplateBeginEditable name="EditRegion4" -->
-     <!-- TemplateEndEditable --></nav>
+</header>
+        <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
-      <!-- Jumbotron --><!-- TemplateBeginEditable name="EditRegion3" -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
-      <!-- TemplateEndEditable --><!-- Example row of columns -->
+      <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
+            <div class="jumbotron">
+        <h1>Contact Us!</h1>
+       <br>
+       <h4> Phone: +65910218283019284029385899</h4>
+       <h4> E-mail: SoftEngPayroll@gmail.com</h4>
+       
+        </div>
+      <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->
       <footer class="footer">
@@ -72,6 +83,6 @@
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-</html>
+<!-- InstanceEnd --></html>

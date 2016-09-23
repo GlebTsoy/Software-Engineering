@@ -31,7 +31,8 @@
     <![endif]-->
   <!-- TemplateBeginEditable name="head" -->
   <!-- TemplateEndEditable -->
-  </head>
+  </head><link rel="stylesheet" type="text/css" href="../assets/header-login-signup.css">
+
   <body style=" background-image:url(../bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,18 +42,29 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
+ 
+ 
         <nav><!-- TemplateBeginEditable name="EditRegion4" -->
-          <ul class="nav nav-justified">
-            <li class="active"><a href="../Employee.html">Employee List</a></li>
-            <li><a href="../AddNew.html">Add New</a></li>
-            <li><a href="../Help.html">Help</a></li>
-            </ul>
+              <header class="header-login-signup">
+	<div class="header-limiter">
+		<h1><a href="#">Payroll <span>System</span></a></h1>
+		<nav>
+			<a href="../employee.html">Employee List</a>
+			<a href="../addnew.html">Add New</a>
+			<a href="../help.html">Help</a>
+		</nav>
+
+		<ul>
+			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
+		</ul>
+
+	</div>
+</header>
         <!-- TemplateEndEditable --></nav>
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- TemplateBeginEditable name="EditRegion3" -->
-      <div class="jumbotron">
+      <div class="jumbotron" style=" background-color: #29304F">
         <h1>Marketing stuff!</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>

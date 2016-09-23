@@ -37,7 +37,8 @@ if ($_SESSION["valid"] != "Admin"){
     <![endif]-->
   <!-- InstanceBeginEditable name="head" -->
   <!-- InstanceEndEditable -->
-  </head>
+  </head><link rel="stylesheet" type="text/css" href="assets/header-login-signup.css">
+
   <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -47,23 +48,46 @@ if ($_SESSION["valid"] != "Admin"){
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
+ 
+ 
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
-          <ul class="nav nav-justified">
-            <li><a href="employee.php">Employee List</a></li>
-            <li><a href="addnew.php">Add New</a></li>
-            <li class="active"><a href="help.php">Help</a></li>
-            </ul>
+                      <header class="header-login-signup">
+	<div class="header-limiter">
+		<h1>Payroll <span>System</span></h1>
+		<nav>
+			<a href="employee.php">Employee List</a>
+			<a href="addnew.php">Add New</a>
+			<a href="faq.php" class="selected">FAQ</a>
+			<a href="contacts.php">Contacts</a>
+		</nav>
+
+		<ul>
+			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
+		</ul>
+
+	</div>
+</header>
         <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
       <div class="jumbotron">
-        <h1>Help!</h1>
-        <p class="lead"> We offer free technical support to our customers and companies evaluating our products. 
-        Our technical support team is commited to providing superior support service, and is available Monday to Friday. <br><br> Contact us! </p>
-        <p>&nbsp; +62698671223242342343192381238</p>
-      </div>
+        <h1>FAQ</h1>
+        <h2>I think my paycheck is incorrect. What should I do?</h2>
+<h4>Contact your Home Department Coordinator since all pay starts at the Home Department Level. The HDC will investigate your question and let you know the resolution. </h4>
+<br>
+<h2> Am I eligible for Overtime?</h2>
+<h4>Eligibility for Overtime is determined by job classification. See your Home Department Coordinator. </h4>
+<br>
+<h2>When is my payday? </h2>
+<h4>Your payday will depends on your job. It could be weekly on every friday, or monthly every second friday of the month. </h4>
+<br>        
+<h2>How do I calculate my salary?</h2>
+<h4>Depends on the method decided by the admins. If your method is by calculating the timecard, then it will be the work hours times the salary multiplier set by the admins. If it's by sales number, then it will be your number of successful sales times the salary multiplier. If it's fixed, then it will be decided by the admins themselves.</h4>
+<br>  
+<h2>How do I change my personal details?</h2>
+<h4>You can only change some of your details. For further details, contact one of the admins to change it for you.</h4>
+</div>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->
@@ -78,3 +102,8 @@ if ($_SESSION["valid"] != "Admin"){
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 <!-- InstanceEnd --></html>
+
+        <p class="lead"> We offer free technical support to our customers and companies evaluating our products. 
+        Our technical support team is commited to providing superior support service, and is available Monday to Friday. <br><br> Contact us! </p>
+        <p>&nbsp; +62698671223242342343192381238</p>
+    

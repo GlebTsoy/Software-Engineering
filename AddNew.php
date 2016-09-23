@@ -37,7 +37,8 @@ if ($_SESSION["valid"] != "Admin"){
     <![endif]-->
   <!-- InstanceBeginEditable name="head" -->
   <!-- InstanceEndEditable -->
-  </head>
+  </head><link rel="stylesheet" type="text/css" href="assets/header-login-signup.css">
+
   <body style=" background-image:url(bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -47,13 +48,25 @@ if ($_SESSION["valid"] != "Admin"){
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-              <h3 class="text-muted" style=" font-weight:bold">Payroll System <a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Log out</a></h3>
+ 
+ 
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
-            <ul class="nav nav-justified">
-            <li><a href="employee.php">Employee List</a></li>
-            <li class="active"><a href="addnew.php">Add New</a></li>
-            <li><a href="help.php">Help</a></li>
-            </ul>
+                  <header class="header-login-signup">
+	<div class="header-limiter">
+		<h1>Payroll <span>System</span></h1>
+		<nav>
+			<a href="employee.php">Employee List</a>
+			<a href="addnew.php" class="selected">Add New</a>
+			<a href="faq.php">FAQ</a>
+			<a href="contacts.php">Contacts</a>
+		</nav>
+
+		<ul>
+			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
+		</ul>
+
+	</div>
+</header>
         <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
@@ -62,9 +75,10 @@ if ($_SESSION["valid"] != "Admin"){
         <h1>Add new employee!</h1>
         <p class="lead">
         <style>
-		td{ font-size:20px}
+		td{ font-size:20px;}
 		#gender{width:218px}
 		#dateform{width:218px}
+		#clearance{width:218px}
 		input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -140,12 +154,12 @@ input::-webkit-inner-spin-button {
 		<td><input type="password" name ="password" id="password" required></td>
 	</tr>
     <tr>
-		<td>Confirm Password:</td>
+		<td style="font-size:17px">Confirm Password:</td>
 		<td><input type="password" id="confirm_password" required></td>
 	</tr>
 	<tr>
 		<td>Clearance</td>
-		<td><select name="clearance" required>
+		<td><select name="clearance" id="clearance" required>
 			<option value="admin">Admin</option>
 			<option value="user">User</option>
 		</td>
