@@ -71,6 +71,7 @@
     <?php require "databaseConnection.php";
       $id = $_SESSION["loginID"];
       $salarytype = selectById($id)["salarytype"];
+	  
     ?>
 		<script>
 
@@ -90,12 +91,12 @@
 
 		<button id="time" onclick = "showForm(this.textContent)">Time</button>
 		<button id="sales" onclick = "showForm(this.textContent)">Sales</button>
-		<button onclick = "showForm(this.textContent)">Payslip</button>
 		<div id="forms"></div>
 
         </p>
       </div>
-      <script>
+	  
+ <script>
       var salarytype = "<?php echo $salarytype ?>";
       switch (salarytype) {
         case "commission":

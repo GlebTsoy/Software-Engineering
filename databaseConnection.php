@@ -134,7 +134,11 @@ function getSalaries($salaryType){
 
 function getRate($id, $table){
 	$a = new DatabaseConnection();
+<<<<<<< HEAD
 	$sql = "SELECT * FROM $table WHERE id='$id'";
+=======
+	$sql = "SELECT * FROM $table WHERE id = $id";
+>>>>>>> origin/master
 	$result = $a->runSql($sql);
 	$row = mysqli_fetch_assoc($result);
 	$a->closeConn();
