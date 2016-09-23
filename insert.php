@@ -15,6 +15,7 @@ $dob = $_POST["DOB"];
 $job = $_POST["Job"];
 $salary = $_POST["Salary"];
 $salaryRate = $_POST["salaryRate"];
+$salaryType = $_POST["salaryType"];
 $gender = $_POST["gender"];
 $contactNum = $_POST["contactNum"];
 $email = $_POST["email"];
@@ -23,7 +24,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $clearance = $_POST["clearance"];
 
-addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance);
+addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance);
 
 ?>
 </body>

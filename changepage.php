@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION["valid"] != "Admin"){
-	header("Location: index.php");	
+	header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-  
+
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -73,7 +73,7 @@ if ($_SESSION["valid"] != "Admin"){
 <table width="400" border="0" align="center">
   <tbody>
     <tr>
-    
+
 <form action="change.php" method="post">
       <td>First Name:</td>
       <td><input type="text" name="FirstName" style="text-transform: capitalize;"  value="<?php echo $row['firstname']; ?>"></td>
@@ -82,7 +82,7 @@ if ($_SESSION["valid"] != "Admin"){
       <td>Last Name:</td>
       <td><input type="text" name="LastName" style="text-transform: capitalize;"  required value="<?php echo $row['lastname']; ?>"></td>
     </tr>
-    <tr>                     
+    <tr>
       <td>Date of Birth:</td>
       <td>
   <input type="date" name="DOB" id="dateform" value="<?php echo $row['DOB']; ?>"></td>
@@ -100,6 +100,15 @@ if ($_SESSION["valid"] != "Admin"){
       <td>Salary:</td>
       <td><input type="number" name="Salary" required value="<?php echo $row['Salary']; ?>"></td>
     </tr>
+		<tr>
+			<td>Salary Type:</td>
+			<td>
+				<select name="salaryType">
+			    <option value="fixed">Fixed Pay</option>
+			    <option value="hourly">Hourly Pay</option>
+			    <option value="commission">Sales Commission</option>
+  			</select>
+		</tr>
         <tr>
       <td>Gender:</td>
       <td><select name="gender" required id="gender">
@@ -127,12 +136,12 @@ if ($_SESSION["valid"] != "Admin"){
       <td><input type="date" name="dateTerminated" id="dateform" value="<?php echo $row['dateTerminated']; ?>"></td>
     </tr>
   </tbody>
-</table>        
+</table>
 
 <br> <input type="submit" />
 </form>
 <p></p>     </div>
-      
+
 
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>

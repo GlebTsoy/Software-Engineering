@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION["valid"] != "Admin"){
-	header("Location: index.php");	
+	header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-  
+
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -75,7 +75,7 @@ input::-webkit-inner-spin-button {
 <table width="400" border="0" align="center">
   <tbody>
     <tr>
-    
+
 <form action="insert.php" method="post" action="#">
       <td>First Name:</td>
       <td><input type="text" name="FirstName" value=""  style="text-transform: capitalize;"  required></td>
@@ -97,6 +97,15 @@ input::-webkit-inner-spin-button {
       <td>Salary:</td>
       <td><input type="number" name="Salary" value="" required></td>
     </tr>
+		<tr>
+			<td>Salary Type:</td>
+			<td>
+				<select name="salaryType">
+			    <option value="fixed">Fixed Pay</option>
+			    <option value="hourly">Hourly Pay</option>
+			    <option value="commission">Sales Commission</option>
+  			</select>
+		</tr>
 	<tr>
 		<td>Salary rate:</td>
 		<td><input type='number' name = 'salaryRate'></td>
@@ -133,7 +142,7 @@ input::-webkit-inner-spin-button {
     <tr>
 		<td>Confirm Password:</td>
 		<td><input type="password" id="confirm_password" required></td>
-	</tr>    
+	</tr>
 	<tr>
 		<td>Clearance</td>
 		<td><select name="clearance" required>
@@ -142,7 +151,7 @@ input::-webkit-inner-spin-button {
 		</td>
 	</tr>
   </tbody>
-</table>        
+</table>
 
 <br> <input type="submit" />
 
@@ -162,7 +171,7 @@ function validatePassword(){
   }
 }
 password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;</script>     
+confirm_password.onkeyup = validatePassword;</script>
 
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>

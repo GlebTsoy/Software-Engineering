@@ -7,19 +7,19 @@ class DatabaseConnection {
 	private $empdbname = "employee";
 
 	private $conn;
-	
+
 	public function __construct(){
 		$this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->empdbname);
 		if (!$this->conn){
 			die("Connection failed: " . mysqli_connect_error());
 		}
 	}
-	
+
 	public function runSql($sql){
 		$result = mysqli_query($this->conn, $sql);
 		return $result;
 	}
-	
+
 	public function closeConn(){
 		mysqli_close($this->conn);
 	}
@@ -32,7 +32,7 @@ function selectAll(){
 	$result = $a->runSql($sql);
 	return $result;
 }
-	
+
 function selectById($id){
 	$a = new DatabaseConnection();
 	$sql = "SELECT * FROM emp WHERE id='$id'";
@@ -72,10 +72,10 @@ function removeEmp($empIdArray){
 	$a->closeConn();
 }
 
-function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
+function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
 	$a = new DatabaseConnection();
-	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, salaryRate, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance) 
-	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$salaryRate', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
+	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, salaryRate, salaryType, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance)
+	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$salaryRate', '$salaryType', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
 	$a->runSql($sql);
 	$a->closeConn();
 }
