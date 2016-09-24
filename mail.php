@@ -1,11 +1,11 @@
 <?php
 session_start();
-require "databaseConnection.php";
+require_once "databaseConnection.php";
 function sendMail($emp){
 
 $name = selectById($emp["id"])["firstname"];
 $lname = selectById($emp["id"])["lastname"];
-$salary = $emps["salary"];
+$salary = $emp["salary"];
 $email = selectById($emp["id"])["email"];
 
 $msg = "PAYCHECK \n

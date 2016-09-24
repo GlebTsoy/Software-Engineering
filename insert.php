@@ -8,7 +8,6 @@
     background-size:cover">
 <?php
 require "databaseConnection.php";
-$id = NULL;
 $firstname = $_POST["FirstName"];
 $lastname = $_POST["LastName"];
 $dob = $_POST["DOB"];
@@ -24,7 +23,7 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 $clearance = $_POST["clearance"];
 
-addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance);
+addNewEmp($firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance);
 
 ?>
 </body>

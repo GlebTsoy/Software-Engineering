@@ -72,10 +72,12 @@ function removeEmp($empIdArray){
 	$a->closeConn();
 }
 
-function addNewEmp($id, $firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
+function addNewEmp($firstname, $lastname, $dob, $job, $salary, $salaryRate, $salaryType, $gender, $contactNum, $email, $dateHired, $username, $password, $clearance){
 	$a = new DatabaseConnection();
-	$sql = "INSERT INTO `emp` (`id`, `firstname`, `lastname`, `DOB`, `Job`, `Salary`, salaryRate, salaryType, `gender`, `contactNum`, `email`, `dateHired`, username, password, clearance)
-	VALUES ('$id', '$firstname', '$lastname', '$dob', '$job', '$salary', '$salaryRate', '$salaryType', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
+	$sql = "INSERT INTO emp (firstname, lastname, DOB, Job, salaryType, gender, contactNum, email, dateHired, username, password, clearance)
+	VALUES ('$firstname', '$lastname', '$dob', '$job', '$salaryType', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
+	$id = mysqli_insert_id($a);
+	$sql2 = "INSERT INTO hourlyemp (id, salaryRate) VALUSE ('$id', '$salaryRate')";
 	$a->runSql($sql);
 	$a->closeConn();
 }
@@ -104,7 +106,7 @@ function getSalaries($salaryType){
 			$table = "fixedemp";
 			break;
 	}
-	$a = new databaseConnection();
+	$a = new DatabaseConnection();
 	$sql = "SELECT * FROM $table";
 	$result = $a->runSql($sql);
 	$a->closeConn();
@@ -112,7 +114,7 @@ function getSalaries($salaryType){
 }
 
 function getRate($id, $table){
-	$a = new databaseConnection();
+	$a = new DatabaseConnection();
 	$sql = "SELECT * FROM $table";
 	$result = $a->runSql($sql);
 	$row = mysqli_fetch_assoc($result);
@@ -121,7 +123,7 @@ function getRate($id, $table){
 }
 
 function setNumber($id, $table, $number){
-	$a = new databaseConnection();
+	$a = new DatabaseConnection();
 	foreach ($number as $key => $value) {
 		$sql = "UPDATE $table SET $key = '$value' WHERE id = $id";
 		$a->runSql($sql);
@@ -130,7 +132,7 @@ function setNumber($id, $table, $number){
 }
 
 function setSalary($id ,$salary, $table){
-	$a = new databaseConnection();
+	$a = new DatabaseConnection();
 	$sql = "UPDATE $table SET salary = '$salary' WHERE id = $id";
 	$a->runSql($sql);
 	$a->closeConn();
