@@ -90,4 +90,50 @@ function editDetails($empId,$attributes){
 	}
 	$a->closeConn();
 }
+
+function getSalaries($salaryType){
+	$table = "";
+	switch ($salaryType) {
+		case 'hourly':
+			$table = "hourlyemp";
+			break;
+		case 'commission':
+			$table = 'commissionemp';
+			break;
+		default:
+			$table = "fixedemp";
+			break;
+	}
+	$a = new databaseConnection();
+	$sql = "SELECT * FROM $table";
+	$result = $a->runSql($sql);
+	$a->closeConn();
+	return $result;
+}
+
+function getRate($id, $table){
+	$a = new databaseConnection();
+	$sql = "SELECT * FROM $table";
+	$result = $a->runSql($sql);
+	$row = mysqli_fetch_assoc($result);
+	$a->closeConn();
+	return $row;
+}
+
+function setNumber($id, $table, $number){
+	$a = new databaseConnection();
+	foreach ($number as $key => $value) {
+		$sql = "UPDATE $table SET $key = '$value' WHERE id = $id";
+		$a->runSql($sql);
+	}
+	$a->closeConn();
+}
+
+function setSalary($id ,$salary, $table){
+	$a = new databaseConnection();
+	$sql = "UPDATE $table SET salary = '$salary' WHERE id = $id";
+	$a->runSql($sql);
+	$a->closeConn();
+}
+
 ?>

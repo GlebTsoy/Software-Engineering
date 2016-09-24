@@ -12,9 +12,8 @@ session_start();
 <?php
 	require "databaseConnection.php";
 	$id = intval($_GET['q']);
-	
+
 	$row = selectById($id);
-	
 	echo "<form action='print.php' method='post'>
 	<table id='detailed'>
 	<tr><td>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
@@ -22,7 +21,7 @@ session_start();
 	<tr><td>Last Name</td><td>" . $row["lastname"] ."</td></tr>
 	<tr><td>DOB</td><td>" . $row["DOB"] ."</td></tr>
 	<tr><td>Job</td><td>" . $row["Job"] ."</td></tr>
-	<tr><td>Salary</td><td>" . $row["Salary"] ."$</td></tr>
+	<tr><td>Salary Type</td><td>" . $row["salarytype"] ."</td></tr>
 	<tr><td>Gender</td><td>" . $row["gender"] ."</td></tr>
 	<tr><td>Contact Number</td><td>" . $row["contactNum"] ."</td></tr>
 	<tr><td>Email</td><td>" . $row["email"] ."</td></tr>
@@ -32,7 +31,7 @@ session_start();
 	<input type='submit' value='Document to print'>
 	</form>";
 	$_SESSION["id"] = $row["id"];
-	
+
 ?>
 <button onclick="window.location.href='changepage.php'">Change</button>
 <button onclick="window.location.href='mail.php'">Send Paycheck</button>

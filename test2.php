@@ -20,12 +20,10 @@ switch ($formType){
 }
 
 function timeCard(){
-	$time = date("H:i");
-	echo $time;
 	echo "<form action='calculate.php' method = 'post'>
 	<input type='hidden' name='form' value = 'time'>
-	<button type='submit' name='check' value='in'>Check in</button>
-	<button type='submit' name='check' value='out'>Check out</button>
+	<input type='text' name='value'>
+	<input type='submit'>
 	</form>";
 }
 
