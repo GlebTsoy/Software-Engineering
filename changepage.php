@@ -106,25 +106,7 @@ if ($_SESSION["valid"] != "Admin"){
       <td id='tableinfo'>Job:</td>
       <td><input type="text" name="Job" value="<?php echo $row['Job']; ?>"></td>
     </tr>
-		<tr>
-			<td id='tableinfo'>Salary Type:</td>
-			<td>
-				<select name="salaryType" id="salaryType" onchange="salaryTypeChange()">
-					<option value="fixed">Fixed Pay</option>
-					<option value="hourly">Hourly Pay</option>
-					<option value="commission">Sales Commission</option>
-				</select></td>
-		</tr>
-		<tr>
-			<td id='tableinfo'>Salary:</td>
-			<td><input type="number" name="Salary" id="Salary" required value="<?php echo $row['Salary']; ?>"></td>
-		</tr>
-     <tr>
-      <td id='tableinfo'>Salary Rate:</td>
-		<td><input type='number' name = 'salaryRate' id="salaryRate" value="<?php echo $row['salaryRate']; ?>"></td>
-    </tr>
-        <tr>
-      <td id='tableinfo'>Gender:</td>
+		  <td id='tableinfo'>Gender:</td>
       <td><select name="gender" required id="gender">
 	   <option value="<?php echo $row['gender']; ?>" label="<?php echo $row['gender']; ?>" hidden></option>
        <option value="M">M</option>
