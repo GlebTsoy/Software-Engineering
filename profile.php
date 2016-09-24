@@ -59,7 +59,9 @@
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- InstanceBeginEditable name="EditRegion3" -->
-    
+
+<link rel="stylesheet" type="text/css" href="css/tablestyle.css">
+   
       <div class="jumbotron">
         <h1>Profile</h1>
  <div align="center" >

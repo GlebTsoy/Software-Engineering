@@ -67,6 +67,8 @@ if ($_SESSION["valid"] != "Admin"){
 
 	</div>
 </header>
+
+<link rel="stylesheet" type="text/css" href="css/tablestyle.css">
         <!-- InstanceEndEditable --></nav>
       </div>
                           <div id="mid">
@@ -88,33 +90,33 @@ if ($_SESSION["valid"] != "Admin"){
     <tr>
 
 <form action="change.php" method="post">
-      <td>First Name:</td>
+      <td id='tableinfo'>First Name:</td>
       <td><input type="text" name="FirstName" style="text-transform: capitalize;"  value="<?php echo $row['firstname']; ?>"></td>
     </tr>
     <tr>
-      <td>Last Name:</td>
+      <td id='tableinfo'>Last Name:</td>
       <td><input type="text" name="LastName" style="text-transform: capitalize;"  required value="<?php echo $row['lastname']; ?>"></td>
     </tr>
     <tr>
-      <td>Date of Birth:</td>
+      <td id='tableinfo'>Date of Birth:</td>
       <td>
   <input type="date" name="DOB" id="dateform" value="<?php echo $row['DOB']; ?>"></td>
     </tr>
     <tr>
-      <td>Job:</td>
+      <td id='tableinfo'>Job:</td>
       <td><input type="text" name="Job" value="<?php echo $row['Job']; ?>"></td>
     </tr>
      <tr>
-      <td>Salary Rate:</td>
+      <td id='tableinfo'>Salary Rate:</td>
 		<td><input type='number' name = 'salaryRate' value="<?php echo $row['salaryRate']; ?>"></td>
     </tr>
 
     <tr>
-      <td>Salary:</td>
+      <td id='tableinfo'>Salary:</td>
       <td><input type="number" name="Salary" required value="<?php echo $row['Salary']; ?>"></td>
     </tr>
 		<tr>
-			<td>Salary Type:</td>
+			<td id='tableinfo'>Salary Type:</td>
 			<td>
 				<select name="salaryType">
 			    <option value="fixed">Fixed Pay</option>
@@ -123,7 +125,7 @@ if ($_SESSION["valid"] != "Admin"){
   			</select></td>
 		</tr>
         <tr>
-      <td>Gender:</td>
+      <td id='tableinfo'>Gender:</td>
       <td><select name="gender" required id="gender">
 	   <option value="<?php echo $row['gender']; ?>" label="<?php echo $row['gender']; ?>" hidden></option>
        <option value="M">M</option>
@@ -133,19 +135,19 @@ if ($_SESSION["valid"] != "Admin"){
       </td>
     </tr>
     <tr>
-      <td>Contact Num:</td>
+      <td id='tableinfo'>Contact Num:</td>
       <td><input type="tel" name="contactNum" value="<?php echo $row['contactNum']; ?>"></td>
     </tr>
     <tr>
-      <td>E-Mail:</td>
+      <td id='tableinfo'>E-Mail:</td>
       <td><input type="email" name="email" required value="<?php echo $row['email']; ?>"></td>
     </tr>
     <tr>
-      <td>Date Hired:</td>
+      <td id='tableinfo'>Date Hired:</td>
       <td><input type="date" name="dateHired" id="dateform" required value="<?php echo $row['dateHired']; ?>"></td>
     </tr>
 	<tr>
-      <td>Date Terminated:</td>
+      <td id='tableinfo'>Date Terminated:</td>
       <td><input type="date" name="dateTerminated" id="dateform" value="<?php echo $row['dateTerminated']; ?>"></td>
     </tr>
   </tbody>

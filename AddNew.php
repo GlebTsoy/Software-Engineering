@@ -51,6 +51,9 @@ if ($_SESSION["valid"] != "Admin"){
  
  
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
+        
+<link rel="stylesheet" type="text/css" href="css/tablestyle.css">
+
                   <header class="header-login-signup">
 	<div class="header-limiter">
 		<h1>Payroll <span>System</span></h1>
@@ -91,28 +94,28 @@ input::-webkit-inner-spin-button {
     <tr>
 
 <form action="insert.php" method="post" action="#">
-      <td>First Name:</td>
+      <td id='tableinfo'>First Name:</td>
       <td><input type="text" name="FirstName" value=""  style="text-transform: capitalize;"  required></td>
     </tr>
     <tr>
-      <td>Last Name:</td>
+      <td id='tableinfo'>Last Name:</td>
       <td><input type="text" name="LastName" value=""  style="text-transform: capitalize;" required></td>
     </tr>
     <tr>
-      <td>Date of Birth:</td>
+      <td id='tableinfo'>Date of Birth:</td>
       <td>
   <input type="date" name="DOB" id="dateform" required></td>
     </tr>
     <tr>
-      <td>Job:</td>
+      <td id='tableinfo'>Job:</td>
       <td><input type="text" name="Job" value="" required></td>
     </tr>
     <tr>
-      <td>Salary:</td>
+      <td id='tableinfo'>Salary:</td>
       <td><input type="number" name="Salary" value="" required></td>
     </tr>
 		<tr>
-			<td>Salary Type:</td>
+			<td id='tableinfo'>Salary Type:</td>
 			<td>
 				<select name="salaryType">
 			    <option value="fixed">Fixed Pay</option>
@@ -121,11 +124,11 @@ input::-webkit-inner-spin-button {
   			</select>
 		</tr>
 	<tr>
-		<td>Salary rate:</td>
+		<td id='tableinfo'>Salary rate:</td>
 		<td><input type='number' name = 'salaryRate'></td>
 	</tr>
         <tr>
-      <td>Gender:</td>
+      <td id='tableinfo'>Gender:</td>
       <td><select name="gender" id="gender" required>
        <option value="M">Male</option>
        <option value="F">Female</option>
@@ -134,31 +137,31 @@ input::-webkit-inner-spin-button {
       </td>
     </tr>
     <tr>
-      <td>Contact Num:</td>
+      <td id='tableinfo'>Contact Num:</td>
       <td><input type="tel" name="contactNum" value=""></td>
     </tr>
     <tr>
-      <td>E-Mail:</td>
+      <td id='tableinfo'>E-Mail:</td>
       <td><input type="email" name="email" value="" required></td>
     </tr>
     <tr>
-      <td>Date Hired:</td>
+      <td id='tableinfo'>Date Hired:</td>
       <td><input type="date" name="dateHired" id="dateform"></td>
     </tr>
 	<tr>
-		<td>Username:</td>
+		<td id='tableinfo'>Username:</td>
 		<td><input type="text" name = "username" required></td>
 	</tr>
 	<tr>
-		<td>Password:</td>
+		<td id='tableinfo'>Password:</td>
 		<td><input type="password" name ="password" id="password" required></td>
 	</tr>
     <tr>
-		<td style="font-size:17px">Confirm Password:</td>
+		<td style="font-size:17px"  id='tableinfo'>Confirm Password:</td>
 		<td><input type="password" id="confirm_password" required></td>
 	</tr>
 	<tr>
-		<td>Clearance</td>
+		<td id='tableinfo'>Clearance</td>
 		<td><select name="clearance" id="clearance" required>
 			<option value="admin">Admin</option>
 			<option value="user">User</option>

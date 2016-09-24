@@ -1,0 +1,7 @@
+table {border-collapse: collapse; width: 500px}
+th, td {padding: 8px; text-align: left; border: 1px solid black;}
+				tr:nth-child(even) {background-color: #f2f2f2;}
+				tr:nth-child(odd) {background-color: #FFFFFF;}
+				tr:hover{background-color:#ddd;}
+				th:hover{background-color: white; color: #4CAF50;}
+				#tableinfo{background-color: #4caf50; font-weight:500; color: white; width:200px}

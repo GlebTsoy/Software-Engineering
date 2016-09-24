@@ -11,10 +11,8 @@ session_start();
 require "databaseConnection.php";
 
 $id = $_SESSION["loginID"];
-$salaryType = $_POST["salaryType"];
 $email = $_POST["email"];
 $attributes = array(
-	"salaryType"=>$salaryType,
 	"email"=>$email,
 );
 
