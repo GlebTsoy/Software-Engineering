@@ -20,6 +20,10 @@ class DatabaseConnection {
 		$result = mysqli_query($this->conn, $sql);
 		return $result;
 	}
+	public function multiSql($sql){
+		$result = mysqli_multi_query($this->conn, $sql);
+		return $result;
+	}
 
 	public function closeConn(){
 		mysqli_close($this->conn);
@@ -77,9 +81,17 @@ function addNewEmp($firstname, $lastname, $dob, $job, $salary, $salaryRate, $sal
 	$a = new DatabaseConnection();
 	$sql = "INSERT INTO emp (firstname, lastname, DOB, Job, salaryType, gender, contactNum, email, dateHired, username, password, clearance)
 	VALUES ('$firstname', '$lastname', '$dob', '$job', '$salaryType', '$gender', '$contactNum', '$email', '$dateHired', '$username', '$password','$clearance')";
-	$id = mysqli_insert_id($a);
-	$sql2 = "INSERT INTO hourlyemp (id, salaryRate) VALUSE ('$id', '$salaryRate')";
 	$a->runSql($sql);
+	if($salaryType == "hourly"){
+		$sql2= "INSERT INTO hourlyemp (id ,salaryRate) VALUES ((SELECT id FROM emp WHERE username = '$username'),'$salaryRate')";
+	}
+	elseif ($salaryType == "commission") {
+		$sql2= "INSERT INTO commissionemp (id) VALUES ((SELECT id FROM emp WHERE username = '$username'))";
+	}
+	else{
+		$sql2= "INSERT INTO fixedemp (id ,salary) VALUES ((SELECT id FROM emp WHERE username = '$username'), '$salary')";
+	}
+	$a->runSql($sql2);
 	$a->closeConn();
 }
 
