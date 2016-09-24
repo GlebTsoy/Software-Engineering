@@ -43,13 +43,13 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-  
+
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
- 
- 
+
+
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
               <header class="header-login-signup">
 	<div class="header-limiter">
@@ -59,7 +59,7 @@ if ($_SESSION["valid"] != "Admin"){
 			<a href="addnew.php">Add New</a>
 			<a href="faq.php">FAQ</a>
 			<a href="contacts.php">Contacts</a>
-            
+
 		</nav>
 
 		<ul>
@@ -120,7 +120,7 @@ if ($_SESSION["valid"] != "Admin"){
 					 }
 					 echo "</tbody></table>
 						<input id='remove' type='submit' value='Delete'>
-						
+
 						</form>";
 				} else {
 					 echo "0 results";
@@ -131,9 +131,9 @@ if ($_SESSION["valid"] != "Admin"){
 		<div id="employeeDetails"><b>Click on id to get more detailed information</b></div>
       </div>
       <script type-"text/javascript">
-	
+
        function scrollfunction(e) {
-		   
+
        window.location.href="#employeeDetails";
        }
 
