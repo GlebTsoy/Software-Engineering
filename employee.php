@@ -88,6 +88,8 @@ if ($_SESSION["valid"] != "Admin"){
 				#id:hover{background-color:#4caf50; color:white}
 				#detailed{width:50%; position:relative; left:25%}
 				#remove{padding: 8px; margin: 10px;}
+				#tableinfo{background-color: #4caf50; font-weight:500; color: white; width:200px}
+
 			</style>
 			<script>
 			function showUser(id){
@@ -104,6 +106,7 @@ if ($_SESSION["valid"] != "Admin"){
 			}
 			</script>
 			 <div align="center" >
+             
 			<?php
 				require "databaseConnection.php";
 				$result = selectAll();

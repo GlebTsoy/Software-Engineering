@@ -20,6 +20,7 @@ tr, td{padding: 10px;}
 </script>
 </head>
 <body>
+       
 <div>
 <?php
 	
@@ -30,17 +31,17 @@ tr, td{padding: 10px;}
 	$row = selectById($id);
 
 	echo "<table id='detailed'>
-	<tr><td>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
-	<tr><td>First Name</td><td>" . $row["firstname"] ."</td></tr>
-	<tr><td>Last Name</td><td>" . $row["lastname"] ."</td></tr>
-	<tr><td>DOB</td><td>" . $row["DOB"] ."</td></tr>
-	<tr><td>Job</td><td>" . $row["Job"] ."</td></tr>
-	<tr><td>Salary</td><td>" . $row["Salary"] ."$</td></tr>
-	<tr><td>Gender</td><td>" . $row["gender"] ."</td></tr>
-	<tr><td>Contact Number</td><td>" . $row["contactNum"] ."</td></tr>
-	<tr><td>Email</td><td>" . $row["email"] ."</td></tr>
-	<tr><td>Date Hired</td><td>" . $row["dateHired"] ."</td></tr>
-	<tr><td>Date Terminated</td><td>" . $row["dateTerminated"] ."</td></tr>
+	<tr><td id='tableinfo'>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
+	<tr><td id='tableinfo'>First Name</td><td>" . $row["firstname"] ."</td></tr>
+	<tr><td id='tableinfo'>Last Name</td><td>" . $row["lastname"] ."</td></tr>
+	<tr><td id='tableinfo'>DOB</td><td>" . $row["DOB"] ."</td></tr>
+	<tr><td id='tableinfo'>Job</td><td>" . $row["Job"] ."</td></tr>
+	<tr><td id='tableinfo'>Salary</td><td>" . $row["Salary"] ."$</td></tr>
+	<tr><td id='tableinfo'>Gender</td><td>" . $row["gender"] ."</td></tr>
+	<tr><td id='tableinfo'>Contact Number</td><td>" . $row["contactNum"] ."</td></tr>
+	<tr><td id='tableinfo'>Email</td><td>" . $row["email"] ."</td></tr>
+	<tr><td id='tableinfo'>Date Hired</td><td>" . $row["dateHired"] ."</td></tr>
+	<tr><td id='tableinfo'>Date Terminated</td><td>" . $row["dateTerminated"] ."</td></tr>
 	</table>"
 
 ?>
