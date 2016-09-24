@@ -43,13 +43,13 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-  
+
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
- 
- 
+
+
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
                       <header class="header-login-signup">
 	<div class="header-limiter">
@@ -106,24 +106,23 @@ if ($_SESSION["valid"] != "Admin"){
       <td id='tableinfo'>Job:</td>
       <td><input type="text" name="Job" value="<?php echo $row['Job']; ?>"></td>
     </tr>
-     <tr>
-      <td id='tableinfo'>Salary Rate:</td>
-		<td><input type='number' name = 'salaryRate' value="<?php echo $row['salaryRate']; ?>"></td>
-    </tr>
-
-    <tr>
-      <td id='tableinfo'>Salary:</td>
-      <td><input type="number" name="Salary" required value="<?php echo $row['Salary']; ?>"></td>
-    </tr>
 		<tr>
 			<td id='tableinfo'>Salary Type:</td>
 			<td>
-				<select name="salaryType">
-			    <option value="fixed">Fixed Pay</option>
-			    <option value="hourly">Hourly Pay</option>
-			    <option value="commission">Sales Commission</option>
-  			</select></td>
+				<select name="salaryType" id="salaryType" onchange="salaryTypeChange()">
+					<option value="fixed">Fixed Pay</option>
+					<option value="hourly">Hourly Pay</option>
+					<option value="commission">Sales Commission</option>
+				</select></td>
 		</tr>
+		<tr>
+			<td id='tableinfo'>Salary:</td>
+			<td><input type="number" name="Salary" id="Salary" required value="<?php echo $row['Salary']; ?>"></td>
+		</tr>
+     <tr>
+      <td id='tableinfo'>Salary Rate:</td>
+		<td><input type='number' name = 'salaryRate' id="salaryRate" value="<?php echo $row['salaryRate']; ?>"></td>
+    </tr>
         <tr>
       <td id='tableinfo'>Gender:</td>
       <td><select name="gender" required id="gender">
@@ -160,6 +159,23 @@ if ($_SESSION["valid"] != "Admin"){
 
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
+			<script>
+			 function salaryTypeChange()
+			 {
+			 	var select_element = document.getElementById("salaryType").value;
+			 	if(select_element == "fixed"){
+			 	  document.getElementById("Salary").disabled = false;
+			 		document.getElementById("salaryRate").disabled = true;
+			 	}else if(select_element == "hourly"){
+			 	  document.getElementById("Salary").disabled = true;
+			 		document.getElementById("salaryRate").disabled = false;
+			 }
+			 else if(select_element == "commission"){
+				 document.getElementById("Salary").disabled = true;
+				 document.getElementById("salaryRate").disabled = true;
+			}
+			  }
+			 </script>
       <!-- Site footer -->
             <footer class="footer" style="bottom:0;left:0;right:0;height:30px;">
         <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
