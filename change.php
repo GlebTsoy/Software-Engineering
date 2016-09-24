@@ -15,9 +15,6 @@ $firstname = $_POST["FirstName"];
 $lastname = $_POST["LastName"];
 $DOB = $_POST["DOB"];
 $Job = $_POST["Job"];
-$salaryRate = $_POST["salaryRate"];
-$Salary = $_POST["Salary"];
-$salaryType = $_POST["salaryType"];
 $gender = $_POST["gender"];
 $contactNum = $_POST["contactNum"];
 $email = $_POST["email"];
@@ -28,15 +25,13 @@ $attributes = array(
 	"lastname"=>$lastname,
 	"DOB"=>$DOB,
 	"Job"=>$Job,
-	"Salary"=>$Salary,
-	"salaryRate"=>$salaryRate,
-	"salaryType"=>$salaryType,
 	"gender"=>$gender,
 	"contactNum"=>$contactNum,
 	"email"=>$email,
 	"dateHired"=>$dateHired,
 	"dateTerminated"=>$dateTerminated
 );
+
 
 editDetails($id, $attributes);
 

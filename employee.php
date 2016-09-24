@@ -105,8 +105,8 @@ if ($_SESSION["valid"] != "Admin"){
 						xmlhttp.send();
 			}
 			</script>
-			 <div align="center" >
-             
+			 <div align="center">
+
 			<?php
 				require "databaseConnection.php";
 				$result = selectAll();
@@ -123,7 +123,6 @@ if ($_SESSION["valid"] != "Admin"){
 					 }
 					 echo "</tbody></table>
 						<input id='remove' type='submit' value='Delete'>
-
 						</form>";
 				} else {
 					 echo "0 results";
@@ -131,6 +130,7 @@ if ($_SESSION["valid"] != "Admin"){
 			?>
 		</p>
         </div>
+				<button onclick = "window.location.href = 'calculateAdmin.php'">Paycheck</button>
 		<div id="employeeDetails"><b>Click on id to get more detailed information</b></div>
       </div>
       <script type-"text/javascript">

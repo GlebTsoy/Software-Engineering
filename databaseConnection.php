@@ -73,6 +73,12 @@ function removeEmp($empIdArray){
 	foreach($empIdArray as $id){
 		$sql = "DELETE FROM emp WHERE id='$id'";
 		$a->runSql($sql);
+		$sql2 = "DELETE FROM hourlyemp WHERE id = '$id'";
+		$a->runSql($sql2);
+		$sql3 = "DELETE FROM fixedemp WHERE id = '$id'";
+		$a->runSql($sql3);
+		$sql4 = "DELETE FROM commissionemp WHERE id = '$id'";
+		$a->runSql($sql4);
 	}
 	$a->closeConn();
 }
@@ -159,14 +165,13 @@ function table($row){
 	<tr><td id='tableinfo'>Last Name</td><td>" . $row["lastname"] ."</td></tr>
 	<tr><td id='tableinfo'>DOB</td><td>" . $row["DOB"] ."</td></tr>
 	<tr><td id='tableinfo'>Job</td><td>" . $row["Job"] ."</td></tr>
-	<tr><td id='tableinfo'>Salary</td><td>" . $row["Salary"] ."$</td></tr>
 	<tr><td id='tableinfo'>Gender</td><td>" . $row["gender"] ."</td></tr>
 	<tr><td id='tableinfo'>Contact Number</td><td>" . $row["contactNum"] ."</td></tr>
 	<tr><td id='tableinfo'>Email</td><td>" . $row["email"] ."</td></tr>
 	<tr><td id='tableinfo'>Date Hired</td><td>" . $row["dateHired"] ."</td></tr>
 	<tr><td id='tableinfo'>Date Terminated</td><td>" . $row["dateTerminated"] ."</td></tr>
+	<tr><td id='tableinfo'>Salary Type</td><td>" . $row["salarytype"] ."</td></tr>
 	</table>
-	<input type='submit' value='Document to print'>
 	</form>";
 }
 
