@@ -43,15 +43,15 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-
+  
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-
-
+ 
+ 
         <nav><!-- InstanceBeginEditable name="EditRegion4" -->
-
+        
 <link rel="stylesheet" type="text/css" href="css/tablestyle.css">
 
                   <header class="header-login-signup">
@@ -110,22 +110,22 @@ input::-webkit-inner-spin-button {
       <td id='tableinfo'>Job:</td>
       <td><input type="text" name="Job" value="" required></td>
     </tr>
+    <tr>
+      <td id='tableinfo'>Salary:</td>
+      <td><input type="number" name="Salary" value="" required></td>
+    </tr>
 		<tr>
 			<td id='tableinfo'>Salary Type:</td>
 			<td>
-				<select name="salaryType" id="salaryType" onchange="salaryTypeChange()" required>
+				<select name="salaryType">
 			    <option value="fixed">Fixed Pay</option>
 			    <option value="hourly">Hourly Pay</option>
 			    <option value="commission">Sales Commission</option>
   			</select>
 		</tr>
-    <tr>
-      <td id='tableinfo'>Salary:</td>
-      <td><input type="number" name="Salary" id="Salary" value=""></td>
-    </tr>
 	<tr>
-		<td id='tableinfo'>Salary Rate:</td>
-		<td><input type='number' name = 'salaryRate'  id="salaryRate" disabled></td>
+		<td id='tableinfo'>Salary rate:</td>
+		<td><input type='number' name = 'salaryRate'></td>
 	</tr>
         <tr>
       <td id='tableinfo'>Gender:</td>
@@ -176,21 +176,6 @@ input::-webkit-inner-spin-button {
 
 </form>
 <p></p>     </div>
-
-<script>
- function salaryTypeChange()
- {
- 	var select_element = document.getElementById("salaryType").value;
- 	if(select_element == "fixed"){
- 	  document.getElementById("Salary").disabled = false;
- 		document.getElementById("salaryRate").disabled = true;
- 	}else{
- 	  document.getElementById("Salary").disabled = true;
- 		document.getElementById("salaryRate").disabled = false;
- }
- }
- </script>
-
 <script>
 var password = document.getElementById("password")
   , confirm_password = document.getElementById("confirm_password");
