@@ -15,7 +15,7 @@ if ($_SESSION["valid"] != "Admin"){
     <meta name="author" content="">
     <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Help</title>
+    <title>FAQ</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,7 @@ if ($_SESSION["valid"] != "Admin"){
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->
-      <footer class="footer">
+            <footer class="footer" style="bottom:0;left:0;right:0;height:30px;">
         <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
       </footer>
 
@@ -102,8 +102,3 @@ if ($_SESSION["valid"] != "Admin"){
     <script src="bootstrap-3.3.7/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 <!-- InstanceEnd --></html>
-
-        <p class="lead"> We offer free technical support to our customers and companies evaluating our products. 
-        Our technical support team is commited to providing superior support service, and is available Monday to Friday. <br><br> Contact us! </p>
-        <p>&nbsp; +62698671223242342343192381238</p>
-    

@@ -15,7 +15,7 @@ if ($_SESSION["valid"] != "Admin"){
     <meta name="author" content="">
     <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Add New Employee</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@ if ($_SESSION["valid"] != "Admin"){
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-
+  
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -190,7 +190,7 @@ confirm_password.onkeyup = validatePassword;</script>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->
-      <footer class="footer">
+            <footer class="footer" style="bottom:0;left:0;right:0;height:30px;">
         <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
       </footer>
 

@@ -1,3 +1,4 @@
+
 <?php
 
 class DatabaseConnection {
@@ -138,4 +139,33 @@ function setSalary($id ,$salary, $table){
 	$a->closeConn();
 }
 
+function table($row){
+	echo "<form action='print.php' method='post'>
+	<table id='detailed'>
+	<tr><td id='tableinfo'>ID</td><td name='details_id'>" . $row["id"] ."</td></tr>
+	<tr><td id='tableinfo'>First Name</td><td>" . $row["firstname"] ."</td></tr>
+	<tr><td id='tableinfo'>Last Name</td><td>" . $row["lastname"] ."</td></tr>
+	<tr><td id='tableinfo'>DOB</td><td>" . $row["DOB"] ."</td></tr>
+	<tr><td id='tableinfo'>Job</td><td>" . $row["Job"] ."</td></tr>
+	<tr><td id='tableinfo'>Salary</td><td>" . $row["Salary"] ."$</td></tr>
+	<tr><td id='tableinfo'>Gender</td><td>" . $row["gender"] ."</td></tr>
+	<tr><td id='tableinfo'>Contact Number</td><td>" . $row["contactNum"] ."</td></tr>
+	<tr><td id='tableinfo'>Email</td><td>" . $row["email"] ."</td></tr>
+	<tr><td id='tableinfo'>Date Hired</td><td>" . $row["dateHired"] ."</td></tr>
+	<tr><td id='tableinfo'>Date Terminated</td><td>" . $row["dateTerminated"] ."</td></tr>
+	</table>
+	<input type='submit' value='Document to print'>
+	</form>";
+}
+
 ?>
+		<style>
+				table {border-collapse: collapse; width: 500px}
+				th, td {padding: 8px; text-align: left; border: 1px solid black;}
+				tr:nth-child(even) {background-color: #f2f2f2;}
+				tr:nth-child(odd) {background-color: #FFFFFF;}
+				tr:hover{background-color:#ddd;}
+				th:hover{background-color: white; color: #4CAF50;}
+				#tableinfo{background-color: #4caf50; font-weight:500; color: white; width:150px}
+
+			</style>
