@@ -76,7 +76,7 @@ if ($_SESSION["valid"] != "Admin"){
         <h1>Employee List </h1>
         <p class="lead">
 			<style>
-				table {border-collapse: collapse; width: 100%;}
+				table {border-collapse: collapse; width: 100%;  }
 				th, td {padding: 8px; text-align: left; border: 1px solid #ddd;}
 				tr:nth-child(even) {background-color: #f2f2f2;}
 				tr:nth-child(odd) {background-color: #FFFFFF;}
@@ -103,6 +103,7 @@ if ($_SESSION["valid"] != "Admin"){
 						xmlhttp.send();
 			}
 			</script>
+			 <div align="center" >
 			<?php
 				require "databaseConnection.php";
 				$result = selectAll();
@@ -126,6 +127,7 @@ if ($_SESSION["valid"] != "Admin"){
 				}
 			?>
 		</p>
+        </div>
 		<div id="employeeDetails"><b>Click on id to get more detailed information</b></div>
       </div>
       <script type-"text/javascript">
@@ -139,7 +141,7 @@ if ($_SESSION["valid"] != "Admin"){
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->
-      <footer class="footer">
+            <footer class="footer" style="bottom:0;left:0;right:0;height:30px;">
         <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
       </footer>
 

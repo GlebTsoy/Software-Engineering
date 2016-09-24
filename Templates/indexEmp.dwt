@@ -44,15 +44,18 @@
     <header class="header-login-signup">
 	<div class="header-limiter">
 		<h1>Payroll <span>System</span></h1>
+           <nav><!-- TemplateBeginEditable name="EditRegion4" -->
+		<nav>
+			<a href="timecard.php">Timecard</a>
+			<a href="profile.php">Profile</a>
+		</nav>
+        <!-- TemplateEndEditable --></nav>
 		<ul>
 			<li><a style="float:right; font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" href="#" role="button" onclick="window.location.href='index.php'">Logout</a></li>
 		</ul>
-
 	</div>
 </header>  
 <link rel="stylesheet" type="text/css" href="../assets/header-login-signup.css">
-           <nav><!-- TemplateBeginEditable name="EditRegion4" -->
-     <!-- TemplateEndEditable --></nav>
       </div>
                           <div id="mid">
       <!-- Jumbotron --><!-- TemplateBeginEditable name="EditRegion3" -->
@@ -65,7 +68,7 @@
       </div>
       <!-- Site footer -->
       <footer class="footer">
-        <p style="font-size:9px">&copy; 2016 The Company's Company, Inc.</p>
+        <p style="font-size:9px">2016 The Company's Company, Inc.</p>
       </footer>
 
     </div> <!-- /container -->
