@@ -27,7 +27,7 @@ switch ($_SESSION["valid"]){
     echo "<script>window.location.assign('employee.php')</script>";
 		break;
 	case "User":
-		header("Location: test.php");
+		echo "<script>window.location.assign('timecard.php')</script>";
 		break;
 	default:
 		echo " <div align='center'> <h1>Wrong username or password!</h1><p> <br><a href='index.php'>Return</a></div></p> ";

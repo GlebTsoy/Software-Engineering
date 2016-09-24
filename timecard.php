@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/indexEmp.dwt" codeOutsideHTMLIsLocked="false" -->
   <head>
@@ -36,7 +39,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover">
-   
+
     <div class="container" >
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -60,9 +63,12 @@
       <div class="jumbotron">
         <h1>Payment</h1>
         <p class="lead">
-        
+    <?php require "databaseConnection.php";
+      $id = $_SESSION["loginID"];
+      $salarytype = selectById($id)["salarytype"];
+    ?>
 		<script>
-		
+
 			function showForm(formName){
 				if (window.XMLHttpRequest) {
 					xmlhttp=new XMLHttpRequest();
@@ -75,16 +81,29 @@
 						xmlhttp.open("GET","test2.php?q="+formName,true);
 						xmlhttp.send();
 			}
-
 		</script>
 
-		<button onclick = "showForm(this.textContent)">Time</button>
-		<button onclick = "showForm(this.textContent)">Sales</button>
+		<button id="time" onclick = "showForm(this.textContent)">Time</button>
+		<button id="sales" onclick = "showForm(this.textContent)">Sales</button>
 		<button onclick = "showForm(this.textContent)">Payslip</button>
 		<div id="forms"></div>
-        
+
         </p>
       </div>
+      <script>
+      var salarytype = "<?php echo $salarytype ?>";
+      switch (salarytype) {
+        case "commission":
+          document.getElementById("time").disabled = true;
+          break;
+        case "hourly":
+          document.getElementById("sales").disabled = true;
+          break;
+        default:
+          document.getElementById("time").disabled = true;
+          document.getElementById("sales").disabled = true;
+      }
+      </script>
       <!-- InstanceEndEditable --><!-- Example row of columns -->
       </div>
       <!-- Site footer -->

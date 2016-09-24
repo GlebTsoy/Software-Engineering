@@ -20,10 +20,12 @@ switch ($formType){
 }
 
 function timeCard(){
+	$time = date("H:i");
+	echo $time;
 	echo "<form action='calculate.php' method = 'post'>
 	<input type='hidden' name='form' value = 'time'>
-	<input type='text' name='value'>
-	<input type='submit'>
+	<button type='submit' name='check' value='in'>Check in</button>
+	<button type='submit' name='check' value='out'>Check out</button>
 	</form>";
 }
 
@@ -31,9 +33,9 @@ function paySlip(){
 	$id = $_SESSION["loginID"];
 	$weekday = date("l");
 	$monthDay = date("d");
-	
+
 	$row = selectById($id);
-	if($weekday == "Friday"){	
+	if($weekday == "Friday"){
 		echo "Payday, your salary is ".$row["Salary"];
 	}
 	else{
