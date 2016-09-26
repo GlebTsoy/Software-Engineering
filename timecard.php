@@ -90,7 +90,6 @@
 
 		<button id="time" onclick = "showForm(this.textContent)">Time</button>
 		<button id="sales" onclick = "showForm(this.textContent)">Sales</button>
-		<button onclick = "showForm(this.textContent)">Payslip</button>
 		<div id="forms"></div>
 
         </p>

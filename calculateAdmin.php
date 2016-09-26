@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta http-equiv="refresh" content="0; url=employee.php" />
 </head>
 <body>
   <?php
     require_once "databaseConnection.php";
     require "mail.php";
     $day_of_the_month = date("d");
+	echo $day_of_the_month;
     $day_of_the_week = date("l");
+	echo $day_of_the_week;
     $last_day = date("t");
     if ($day_of_the_month == $last_day && $day_of_the_week!="Friday"){
       $emps = getSalaries("commission");
@@ -26,7 +30,6 @@
     function send($emps){
       foreach ($emps as $emp) {
         sendMail($emp);
-        echo $emp;
       }
     }
   ?>
