@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="0; url=timecard.php" />
 <?php
 session_start();
 require "databaseConnection.php";

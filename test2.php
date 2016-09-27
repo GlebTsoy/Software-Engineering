@@ -22,7 +22,7 @@ switch ($formType){
 function timeCard(){
 	echo "<form action='calculate.php' method = 'post'>
 	<input type='hidden' name='form' value = 'time'>
-	<input type='text' name='value'>
+	<input type='number' name='value'>
 	<input type='submit'>
 	</form>";
 }
@@ -45,11 +45,18 @@ function sales(){
 	echo "<form>
 	<input type='text'>
 	<input type='hidden' name='form' value='sales'
-	<input type='text' name='value'>
+	<input type='number' name='value'>
 	<input type='submit'>
 	</form>";
 }
 
 ?>
+<style>
+		input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+</style>
+
 </body>
 </html>

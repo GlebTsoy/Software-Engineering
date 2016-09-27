@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="bootstrap-3.3.7/bootstrap-3.3.7/docs/favicon.ico">
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Profile</title>
     <!-- InstanceEndEditable -->
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.7/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">

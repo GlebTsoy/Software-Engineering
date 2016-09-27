@@ -114,28 +114,30 @@ if ($_SESSION["valid"] != "Admin"){
 				require "databaseConnection.php";
 				$result = selectAll();
 				if (mysqli_num_rows($result)>0) {
-					 echo "<form action='remove.php' method='post'><table id='empTable'><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th><th>Slar type</th></tr></thead><tbody>";
+					 echo "<form action='remove.php' method='post'><table id='empTable'><thead><tr><th></th><th>ID</th><th>First Name</th><th>Last name</th><th>Job</th><th>Salary type</th></tr></thead><tbody>";
 					 while($row = mysqli_fetch_assoc($result)) {
 						 echo "<tr>
 						 <td><input type='checkbox' name='tick[]' value='" .$row["id"]. "'></td>
 						 <td id='id' onclick='showUser(this.textContent); setTimeout(scrollfunction, 10)'>" . $row["id"]. "</td>
-						 <td>" . $row["firstname"]. "</td>
-						 <td>" . $row["lastname"]. "</td>
+						 <td style='	text-transform: capitalize;'>" . $row["firstname"]. "</td>
+						 <td style='text-transform: capitalize;'>" . $row["lastname"]. "</td>
 						 <td>" . $row["Job"]."</td>
 						 <td>" . $row["salarytype"]. "</td>
 						 </tr>";
 					 }
 					 echo "</tbody></table>
-						<input id='remove' type='submit' value='Delete'>
+						<input style='font-size:14px; border:2px; border-style:solid; border-color: #770001; padding: 0.5em; background-color: #E74545 ; color:white;border-radius: 10px;' id='remove' type='submit' value='Delete'> 				
 						</form>";
 				} else {
 					 echo "0 results";
 				}
 			?>
 		</p>
-        </div>
-				<button onclick = "window.location.href = 'calculateAdmin.php'">Paycheck</button>
-		<div id="employeeDetails"><b>Click on id to get more detailed information</b></div>
+		</div>
+						<button style="font-size:14px; border:1px; border-style:solid; border-color: #0C8A12; padding: 0.5em; background-color: #78D96C ; color:white;border-radius: 10px;" onclick = "window.location.href = 'calculateAdmin.php' ">Paycheck</button>
+
+
+        <div id="employeeDetails"><b>Click on id to get more detailed information</b></div>        
       </div>
       <script type-"text/javascript">
 

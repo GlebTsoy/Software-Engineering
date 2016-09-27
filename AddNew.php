@@ -184,13 +184,17 @@ input::-webkit-inner-spin-button {
  	if(select_element == "fixed"){
  	  document.getElementById("Salary").disabled = false;
  		document.getElementById("salaryRate").disabled = true;
+		document.getElementById("salaryRate").value="";
  	}else if(select_element == "hourly"){
  	  document.getElementById("Salary").disabled = true;
+ 	  document.getElementById("Salary").value = "";
  		document.getElementById("salaryRate").disabled = false;
  }
  else if(select_element == "commission"){
 	 document.getElementById("Salary").disabled = true;
 	 document.getElementById("salaryRate").disabled = true;
+	document.getElementById("salaryRate").value="";
+ 	  document.getElementById("Salary").value = "";
 }
   }
  </script>
